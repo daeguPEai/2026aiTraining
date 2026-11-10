@@ -233,6 +233,86 @@ h2 .g{color:#5f5f58}
 .pose.cmpmode .side{opacity:0;transition:opacity .3s}
 @media(max-width:640px){.pose svg{width:40%}.pose .cmp,.pose .side{left:43%;right:3%}.pose .plab{font-size:11.5px;padding:5px 7px}.pose .cmp{font-size:11px}.pose .cmp div{padding:6px}}
 
+
+/* ---- 파트2: 앱 제작 화면(와이어프레임) ---- */
+.build .bbar{height:28px;display:flex;align-items:center;gap:5px;padding:0 10px;background:var(--soft);border-bottom:1px solid var(--line)}
+.build .bbar i{width:7px;height:7px;border-radius:50%;background:var(--line2)}
+.build .burl{margin-left:8px;flex:1;font-family:var(--mono);font-size:11px;color:var(--ink2);background:var(--card);border-radius:6px;padding:1px 10px;min-height:18px;display:flex;align-items:center;gap:6px;white-space:nowrap;overflow:hidden}
+.build .burl b{color:var(--ok);font-family:Pretendard,sans-serif;font-size:11px}
+.build .bw{padding:10px;display:grid;gap:7px}
+.wf{opacity:0;transform:translateY(6px);transition:.35s}
+.wf.in{opacity:1;transform:none}
+.wf-h{height:30px;border-radius:7px;background:#2a2c30;display:flex;align-items:center;padding:0 10px;color:#fff;font-size:11px;font-weight:700}
+.wf-s{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.wf-s span{border:1px solid var(--line2);border-radius:7px;background:#fff;text-align:center;padding:5px 0;font-size:10px;color:var(--mute)}
+.wf-s span b{display:block;font-size:14px;color:var(--ink);font-family:var(--mono)}
+.wf-t{display:flex;flex-wrap:wrap;gap:4px}
+.wf-t span{font-size:10px;font-weight:600;border-radius:5px;background:var(--soft);padding:2px 6px}
+.wf-t span.on{background:var(--accent);color:#fff}
+.wf-r{display:grid;gap:3px}
+.wf-r div{height:13px;border-radius:4px;background:var(--soft)}
+.wf-r div:first-child{background:#dcdbd4}
+.sheets{position:absolute;right:10px;bottom:10px;display:flex;gap:4px;align-items:center;font-size:10.5px;font-weight:600;background:#fff;border:1px solid var(--line2);border-radius:8px;padding:4px 6px}
+.sheets em{font-style:normal;color:var(--ok);font-weight:700;margin-right:2px}
+.sheets span{border-radius:4px;background:#e7f4ec;color:#0f6b3a;padding:1px 6px;opacity:0;transition:.3s}
+.sheets span.in{opacity:1}
+.linkfx{position:absolute;left:50%;top:58%;transform:translate(-50%,-50%) scale(.9);background:var(--ink);color:#fff;border-radius:10px;padding:8px 12px;font-size:12px;font-weight:600;opacity:0;transition:.35s;white-space:nowrap}
+.linkfx.in{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.linkfx b{color:var(--accent)}
+
+/* ---- 파트2: 화면 전환 → 휴대폰 ---- */
+.chatv{transition:opacity .45s}
+.appv{display:none;position:relative;overflow:hidden}
+.appmode .chatv{display:none}
+.appmode .appv{display:block;animation:fadein .6s both}
+@keyframes fadein{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.pstage{position:absolute;left:0;top:0;width:680px;height:660px;transform-origin:0 0}
+.pcap{position:absolute;left:0;right:0;top:0;text-align:center}
+.pstage.nar{width:530px}.pstage.nar .phones{gap:14px}.pstage.nar .phn{transform:none}.pstage.nar .phn:nth-child(2){transform:translateY(12px)}.pstage.nar .pcap h4{font-size:30px}.pstage.nar .pcap .k{font-size:15px}
+.pcap .k{font-family:var(--mono);font-size:12px;color:var(--mute)}
+.pcap h4{font-size:24px;letter-spacing:-.03em;line-height:1.3;margin-top:4px;transition:opacity .3s}
+.phones{position:absolute;left:0;right:0;top:86px;display:flex;justify-content:center;gap:44px}
+.phn{width:250px;height:500px;border:9px solid #151515;border-radius:42px 38px 44px 40px;background:#f3f5f9;overflow:hidden;position:relative;transform:rotate(-1.4deg);box-shadow:0 24px 40px -24px rgba(0,0,0,.35)}
+.phn:nth-child(2){transform:rotate(1.2deg) translateY(16px)}
+.phn .notch{position:absolute;left:50%;top:6px;width:64px;height:16px;border-radius:9px;background:#151515;transform:translateX(-50%);z-index:3}
+.phn .lbl2{position:absolute;left:50%;bottom:-36px;transform:translateX(-50%);font-size:13px;font-weight:700;white-space:nowrap}
+.ap-h{background:linear-gradient(135deg,#2f5fe0,#1f43b4);color:#fff;padding:30px 12px 10px}
+.ap-h small{display:inline-block;font-size:8.5px;font-weight:600;background:rgba(255,255,255,.2);border-radius:99px;padding:1px 7px}
+.ap-h b{display:block;font-size:13px;margin-top:4px;letter-spacing:-.02em}
+.ap-h span{font-size:9.5px;opacity:.85}
+.ap-b{padding:9px}
+.ap-card{background:#fff;border-radius:10px;padding:9px;margin-bottom:8px;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+.ap-ev{font-size:11px;color:#e5482e;font-weight:700}
+.ap-ev2{font-size:13.5px;font-weight:800;letter-spacing:-.02em;margin-top:1px}
+.ap-row{display:grid;grid-template-columns:36px 1fr;align-items:center;gap:6px;padding:5px 0;border-bottom:1px solid #eef0f4;font-size:11.5px;font-weight:700}
+.ap-row:last-child{border-bottom:0}
+.ap-rk{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.ap-rk i{font-style:normal;text-align:center;font-size:10.5px;font-weight:700;border:1px solid #d7dbe4;border-radius:6px;padding:3px 0;color:#64748b;background:#fff;transition:.2s}
+.ap-rk i.on{background:#e5482e;border-color:#e5482e;color:#fff;transform:scale(1.08)}
+.ap-btn{display:block;text-align:center;background:#e5482e;color:#fff;font-size:12px;font-weight:700;border-radius:9px;padding:8px;transition:.15s}
+.ap-btn.press{transform:scale(.95);filter:brightness(.9)}
+.ap-toast{position:absolute;left:50%;bottom:16px;transform:translate(-50%,8px);background:#151515;color:#fff;font-size:11px;font-weight:600;border-radius:8px;padding:5px 11px;opacity:0;transition:.3s;white-space:nowrap}
+.ap-toast.on{opacity:1;transform:translate(-50%,0)}
+.ap-st{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:8px}
+.ap-st span{background:#fff;border-radius:9px;text-align:center;padding:6px 0;font-size:9px;color:#64748b;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+.ap-st b{display:block;font-size:15px;color:#2f5fe0}
+.ap-tabs{display:flex;gap:4px;margin-bottom:8px;flex-wrap:wrap}
+.ap-tabs span{font-size:9.5px;font-weight:700;background:#e6e9f0;border-radius:6px;padding:3px 6px}
+.ap-tabs span.on{background:#e5482e;color:#fff}
+.ap-live{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:800;margin-bottom:6px}
+.ap-live em{font-style:normal;font-size:9.5px;font-weight:700;color:#e5482e;display:flex;align-items:center;gap:4px}
+.ap-live em::before{content:"";width:6px;height:6px;border-radius:50%;background:#e5482e;animation:blink 1s infinite}
+.ap-rank{position:relative;height:186px}
+.ap-li{position:absolute;left:0;right:0;height:28px;display:grid;grid-template-columns:18px 30px 1fr 30px;align-items:center;gap:5px;font-size:11px;font-weight:700;transition:top .7s cubic-bezier(.3,1.2,.4,1),background .4s;border-radius:6px;padding:0 4px}
+.ap-li .no{font-family:var(--mono);color:#64748b;font-size:10px}
+.ap-li .bar{height:9px;border-radius:5px;background:#dfe5f3;overflow:hidden}
+.ap-li .bar i{display:block;height:100%;background:#2f5fe0;border-radius:5px;transition:width .8s}
+.ap-li .sc{font-family:var(--mono);font-size:10.5px;text-align:right}
+.ap-li.up{background:#fff1ec}
+.ap-li.up .bar i{background:#e5482e}
+.ap-upd{font-size:9.5px;color:#64748b;text-align:right;margin-top:4px;opacity:0;transition:.3s}
+.ap-upd.in{opacity:1}
+
 /* placeholder */
 .ph{display:grid;place-items:center;text-align:center;min-height:420px;border:1.5px dashed var(--line2);border-radius:18px;padding:30px 20px}
 .ph .big{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-family:var(--mono);font-weight:600;color:#fff;margin:0 auto 14px}
@@ -469,6 +549,71 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:60px 0 50px;fo
         </div>
 
 
+
+        <div class="win-body demo" id="demo2" hidden>
+         <div class="chatv">
+          <div class="msg hide" data-m="me">
+            <span class="av me">나</span>
+            <div class="grow"><div class="who">나 <span class="meta">대회 2주 전 · 21:10</span></div><div class="bubble qtext"></div><span class="att">📎 참가신청명단.xlsx · 대회일정표.hwpx</span></div>
+          </div>
+          <div class="msg hide" data-m="ai">
+            <span class="av ai">AI</span>
+            <div class="grow">
+              <div class="who">AI 에이전트 <span class="tool">도구 · Claude + 구글 시트 + GitHub Pages</span></div>
+              <p class="say">신청 명단과 일정표를 읽어서, 휴대폰으로 쓰는 앱 하나로 만들게요. 코딩은 제가 할게요.</p>
+              <div class="work">
+                <div class="wlbl">⌁ 계획</div>
+                <div class="plan"></div>
+                <div class="work-grid">
+                  <div><div class="wlbl">▣ 화면 · 앱 만드는 중</div><div class="screen build" id="build">
+  <div class="bbar"><i></i><i></i><i></i><span class="burl" id="bUrl"></span></div>
+  <div class="bw">
+    <div class="wf wf-h">우리 학교 체육대회 정보 시스템</div>
+    <div class="wf wf-s"><span><b>15</b>신청 학급</span><span><b>9</b>참가 종목</span><span><b>1553</b>참가 인원</span><span><b>LIVE</b>최근 갱신</span></div>
+    <div class="wf wf-t"><span>대회일정표</span><span>업무 분장</span><span>선수 소집</span><span>학급별 확인</span><span>학생 확인</span><span class="sc-res">점수 결과</span><span class="sc-in">심판 입력</span></div>
+    <div class="wf wf-r"><div></div><div></div><div></div><div></div><div></div></div>
+  </div>
+  <div class="sheets"><em>시트</em><span>신청명단</span><span>대회일정</span><span>심판점수</span></div>
+  <div class="linkfx" id="bLink">심판 입력 → <b>점수 결과</b> 실시간 연결</div>
+</div></div>
+                  <div><div class="wlbl">≡ 작업 로그</div><ul class="log"></ul></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="msg hide" data-m="done">
+            <span class="av ai">AI</span>
+            <div class="grow"><div class="who">AI 에이전트</div><div class="rep"><b>체육대회 앱 완성</b><span>대회일정표 · 선수 소집 · 학급별 확인 · 심판 입력 · 점수 결과, 7개 화면</span><span>심판이 입력하면 순위가 바로 바뀌어요 · 링크 하나로 모두 공유</span></div><br><span class="learn">코딩 없이, <b>대화로 만든 우리 학교 앱</b></span></div>
+          </div>
+          <div class="msg hide" data-m="thx" style="margin-bottom:8px">
+            <span class="av me">나</span>
+            <div class="grow"><div class="who">나 <span class="meta">21:40</span></div><div class="bubble">좋아, 이번엔 종이 집계표 없이 간다! 실제 화면 보여 줘.</div></div>
+          </div>
+         </div>
+         <div class="appv" id="appv"><div class="pstage" id="pstage">
+  <div class="pcap"><div class="k">▶ 완성된 앱 · 체육대회 당일</div><h4 id="pcapT">심판이 휴대폰으로 입력하면</h4></div>
+  <div class="phones">
+    <div class="phn"><span class="notch"></span>
+      <div class="ap-h"><small>체육 한마당</small><b>심판 입력</b><span>2학년 · 심판 김○○</span></div>
+      <div class="ap-b">
+        <div class="ap-card"><div class="ap-ev">진행 07 · 결승</div><div class="ap-ev2">힘이여! 솟아라 (줄다리기)</div></div>
+        <div class="ap-card" style="padding:4px 9px"><div class="ap-row"><span>2-1반</span><span class="ap-rk" data-c="2-1"><i>1위</i><i>2위</i><i>3위</i><i>4위</i></span></div><div class="ap-row"><span>2-2반</span><span class="ap-rk" data-c="2-2"><i>1위</i><i>2위</i><i>3위</i><i>4위</i></span></div><div class="ap-row"><span>2-3반</span><span class="ap-rk" data-c="2-3"><i>1위</i><i>2위</i><i>3위</i><i>4위</i></span></div><div class="ap-row"><span>2-4반</span><span class="ap-rk" data-c="2-4"><i>1위</i><i>2위</i><i>3위</i><i>4위</i></span></div><div class="ap-row"><span>2-5반</span><span class="ap-rk" data-c="2-5"><i>1위</i><i>2위</i><i>3위</i><i>4위</i></span></div><div class="ap-row"><span>2-6반</span><span class="ap-rk" data-c="2-6"><i>1위</i><i>2위</i><i>3위</i><i>4위</i></span></div></div>
+        <span class="ap-btn" id="apSave">점수 저장</span>
+      </div>
+      <div class="ap-toast" id="apToast">✓ 저장됨 · 순위 반영</div>
+    </div>
+    <div class="phn"><span class="notch"></span>
+      <div class="ap-h"><small>체육 한마당</small><b>점수 결과</b><span>운동장 대형 화면 · 학생 휴대폰</span></div>
+      <div class="ap-b">
+        <div class="ap-st"><span><b>15</b>신청 학급</span><span><b>9</b>참가 종목</span><span><b>7/11</b>진행</span></div>
+        <div class="ap-tabs"><span>대회일정표</span><span>선수 소집</span><span class="on">점수 결과</span></div>
+        <div class="ap-card"><div class="ap-live">2학년 종합 순위 <em>실시간</em></div><div class="ap-rank" id="apRank"><div class="ap-li" data-c="2-1"><span class="no"></span><span>2-1</span><span class="bar"><i></i></span><span class="sc"></span></div><div class="ap-li" data-c="2-2"><span class="no"></span><span>2-2</span><span class="bar"><i></i></span><span class="sc"></span></div><div class="ap-li" data-c="2-3"><span class="no"></span><span>2-3</span><span class="bar"><i></i></span><span class="sc"></span></div><div class="ap-li" data-c="2-4"><span class="no"></span><span>2-4</span><span class="bar"><i></i></span><span class="sc"></span></div><div class="ap-li" data-c="2-5"><span class="no"></span><span>2-5</span><span class="bar"><i></i></span><span class="sc"></span></div><div class="ap-li" data-c="2-6"><span class="no"></span><span>2-6</span><span class="bar"><i></i></span><span class="sc"></span></div></div><div class="ap-upd" id="apUpd">방금 갱신 · 줄다리기 결승 반영</div></div>
+      </div>
+    </div>
+  </div>
+</div></div>
+          <div class="ctrl"><button class="play">▶ 재생</button><span class="hint">종이 집계표와 엑셀 대신, 휴대폰 하나로.</span></div>
+        </div>
         <div class="win-body demo" id="demo3" hidden>
           <div class="msg hide" data-m="me">
             <span class="av me">나</span>
@@ -705,7 +850,7 @@ const SESSIONS = [
   { key:'파트 1', c:'var(--p1)', tag:'파트 1', win:'#파트1 · 준비 중',
     title:'학생상담보다 쉬운 AI 대화', by:'대구일중학교 이길봉',
     topics:['AI 대화는 어떤 것인가?','강당에서 쓰는 간단한 타이머 만들기','내가 원하는 앱 만들기 대화법 나눔 및 실습'] },
-  { key:'파트 2', c:'var(--p2)', tag:'파트 2', win:'#파트2 · 준비 중',
+  { key:'파트 2', c:'var(--p2)', tag:'파트 2', win:'#파트2 · 체육대회 앱',
     title:'코딩 몰라도 OK! 우리 학교 체육대회 앱 만들기', by:'동평중학교 임대관',
     topics:['체육대회 운영 적용 사례 보기 (진행용)','체육대회 운영 적용 사례 보기 (집계용)','체육대회 웹앱 응용 및 우리 학교 적용 방법 고민하기'] },
   { key:'파트 3', c:'var(--p3)', tag:'파트 3', win:'#파트3 · PAPS 모둠 편성',
@@ -749,6 +894,67 @@ document.querySelectorAll('.dTxt').forEach(e => e.textContent = D_SHORT);
 $id('repDate').textContent = `${tmr.getMonth()+1}.${tmr.getDate()}(${'일월화수목금토'[tmr.getDay()]}) 08:10~09:10`;
 
 const DEMOS = {
+
+  /* ---------- 파트 2: 대화로 체육대회 앱 만들기 → 휴대폰 화면 ---------- */
+  2: {
+    q: '체육대회 날 쓸 앱 만들어 줘. 대회일정표, 선수 소집, 심판 점수 입력, 실시간 순위까지.',
+    plan: ['자료 읽기', '시트 설계', '화면 만들기', '점수 연동', '배포'],
+    log: ['신청 명단 · 9개 종목 읽음', '구글 시트 탭 3개 설계', '대회일정표 · 선수 소집 화면', '심판 입력 · 점수 결과 화면', '점수 → 순위 실시간 연동', 'GitHub Pages 배포 · 링크 생성'],
+    times: ['21:12', '21:14', '21:20', '21:26', '21:31', '21:33'],
+    reset() {
+      const r = $id('demo2'); r.classList.remove('appmode');
+      const b = $id('build');
+      b.querySelectorAll('.wf, .sheets span').forEach(e => e.classList.remove('in'));
+      b.querySelectorAll('.wf-t span').forEach(e => e.classList.remove('on'));
+      $id('bLink').classList.remove('in'); $id('bUrl').innerHTML = '';
+      document.querySelectorAll('#demo2 .ap-rk i').forEach(e => e.classList.remove('on'));
+      $id('apSave').classList.remove('press'); $id('apToast').classList.remove('on'); $id('apUpd').classList.remove('in');
+      $id('pcapT').textContent = '심판이 휴대폰으로 입력하면';
+      apRank(AP_BEFORE, false);
+    },
+    async run(c) {
+      const b = $id('build'), wf = [...b.querySelectorAll('.wf')], sh = [...b.querySelectorAll('.sheets span')];
+      c.chip(0, 'run'); c.log(0, 'run'); await c.sleep(1200);
+      c.chip(0, 'done'); c.log(0, 'done');
+
+      c.chip(1, 'run'); c.log(1, 'run');
+      for (const e of sh) { await c.sleep(450); e.classList.add('in'); }
+      await c.sleep(400); c.chip(1, 'done'); c.log(1, 'done');
+
+      c.chip(2, 'run'); c.log(2, 'run');
+      for (const e of wf) { await c.sleep(550); e.classList.add('in'); }
+      c.log(2, 'done'); c.log(3, 'run');
+      await c.sleep(400); b.querySelector('.sc-in').classList.add('on');
+      await c.sleep(500); b.querySelector('.sc-res').classList.add('on');
+      await c.sleep(400); c.chip(2, 'done'); c.log(3, 'done');
+
+      c.chip(3, 'run'); c.log(4, 'run');
+      $id('bLink').classList.add('in'); await c.sleep(1400); $id('bLink').classList.remove('in');
+      c.chip(3, 'done'); c.log(4, 'done');
+
+      c.chip(4, 'run'); c.log(5, 'run');
+      const u = $id('bUrl'); await c.type(u, 'ourschool.github.io/pefestival', 40);
+      u.innerHTML = u.textContent + ' <b>✓ 배포됨</b>'; await c.sleep(600);
+      c.chip(4, 'done'); c.log(5, 'done');
+    },
+    async after(c) {
+      await c.sleep(1200);
+      const r = $id('demo2'); r.classList.add('appmode'); fitStage();
+      r.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      await c.sleep(1400);
+      for (const [cls, k] of [['2-3', 0], ['2-1', 1], ['2-5', 2], ['2-2', 3]]) {
+        document.querySelector(`#demo2 .ap-rk[data-c="${cls}"]`).children[k].classList.add('on');
+        await c.sleep(650);
+      }
+      const sv = $id('apSave'); sv.classList.add('press'); await c.sleep(250); sv.classList.remove('press');
+      $id('apToast').classList.add('on'); await c.sleep(500);
+      $id('pcapT').textContent = '순위가 바로 바뀝니다';
+      apRank(AP_AFTER, true); $id('apUpd').classList.add('in');
+      await c.sleep(2200); $id('apToast').classList.remove('on');
+      $id('pcapT').textContent = '종이 집계표도, 엑셀 정리도 없이';
+      await c.sleep(1200);
+    }
+  },
   /* ---------- 여는 마당: NEIS 육아시간 상신 ---------- */
   0: {
     q: '내일 08:10~09:10 육아시간 나이스에 상신해 줘',
@@ -881,6 +1087,30 @@ const DEMOS = {
   }
 };
 
+
+/* 파트2 휴대폰 화면 도우미 */
+const AP_BEFORE = { '2-1': 320, '2-3': 300, '2-2': 290, '2-5': 280, '2-4': 260, '2-6': 240 };
+const AP_AFTER  = { '2-3': 400, '2-1': 390, '2-5': 330, '2-2': 320, '2-4': 260, '2-6': 240 };
+function apRank(sc, mark) {
+  const order = Object.keys(sc).sort((a, b) => sc[b] - sc[a]);
+  document.querySelectorAll('#apRank .ap-li').forEach(li => {
+    const c = li.dataset.c, k = order.indexOf(c);
+    li.style.top = (k * 31) + 'px';
+    li.querySelector('.no').textContent = k + 1;
+    li.querySelector('.sc').textContent = sc[c];
+    li.querySelector('.bar i').style.width = Math.round(sc[c] / 420 * 100) + '%';
+    li.classList.toggle('up', !!mark && sc[c] !== AP_BEFORE[c]);
+  });
+}
+function fitStage() {
+  const v = $id('appv'), st = $id('pstage'); if (!v || !st) return;
+  const w = v.clientWidth || 680, nar = w < 600, W = nar ? 530 : 680, k = Math.min(1, w / W);
+  st.classList.toggle('nar', nar);
+  st.style.transform = `scale(${k})`; st.style.left = Math.max(0, (w - W * k) / 2) + 'px';
+  v.style.height = (660 * k) + 'px';
+}
+addEventListener('resize', fitStage);
+
 /* NEIS 화면 도우미 */
 function scr(name) { document.querySelectorAll('#neis .scr').forEach(s => s.classList.toggle('on', s.dataset.s === name)); }
 function act(el) { document.querySelectorAll('#neis .act').forEach(e => e.classList.remove('act')); if (el) el.classList.add('act'); }
@@ -947,6 +1177,7 @@ async function play(n) {
     await c.sleep(500);
     show('done'); await c.sleep(1300);
     show('thx');
+    if (d.after) await d.after(c);
     setStatus('done', '완료');
     r.querySelector('.play').textContent = '↺ 다시 보기';
     playing = -1;
