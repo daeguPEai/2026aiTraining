@@ -646,7 +646,7 @@ const chips = [...document.querySelectorAll('#plan .chip')];
 const logs = [...document.querySelectorAll('#log li')];
 const Q = '내일 08:10~09:10 육아시간 나이스에 상신해 줘';
 
-const SPEED = 1.8; // 클수록 느리게
+const SPEED = 1.5; // 클수록 느리게
 let runId = 0, played = false;
 const sleep = (ms, id) => new Promise((res, rej) => setTimeout(() => id === runId ? res() : rej('stop'), ms * SPEED));
 async function typeIn(el, txt, sp, id) { el.textContent = ''; for (const ch of txt) { el.textContent += ch; await sleep(sp, id); } }
