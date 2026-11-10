@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&display=swap">
 <style>
 :root{
-  --paper:#f7f7f4; --card:#fff; --ink:#151515; --ink2:#3b3b38; --mute:#7a7a72; --faint:#a9a9a0;
+  --paper:#f7f7f4; --card:#fff; --ink:#151515; --ink2:#33332f; --mute:#5f5f58; --faint:#a9a9a0;
   --line:#e4e3dd; --line2:#d2d1c9; --soft:#f0efea; --accent:#ff5a1f; --ok:#169c55;
   --p0:#151515; --p1:#ff5a1f; --p2:#d19f00; --p3:#169c55; --p4:#c4245a;
   --mono:"JetBrains Mono",Pretendard,ui-monospace,Menlo,monospace;
@@ -43,9 +43,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .pill-note .sep{width:1px;height:12px;background:var(--line2)}
 .pill-note .mono{font-size:12px;color:var(--mute)}
 h1{font-size:clamp(38px,6vw,66px);line-height:1.08;letter-spacing:-.05em;font-weight:800;margin:26px 0 22px}
-h1 .hl{display:inline-flex;align-items:center;gap:.18em;background:var(--soft);border-radius:.5em;padding:0 .22em 0 .16em}
-h1 .hl::before{content:"";width:.26em;height:.26em;border-radius:50%;background:var(--accent)}
-h1 .g{color:var(--faint)}
+h1 .hl{display:inline-block;background:var(--ink);color:#fff;border-radius:.4em;padding:0 .26em 0 .2em;margin-right:.06em;line-height:1.2}
+h1 .hl::before{content:"";display:inline-block;width:.24em;height:.24em;border-radius:50%;background:var(--accent);vertical-align:.2em;margin-right:.18em}
+h1 .g{color:var(--ink)}
 .lead{font-size:17px;color:var(--ink2);max-width:34em}
 .facts{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:8px 22px}
 .facts div{display:grid;grid-template-columns:64px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
@@ -64,7 +64,7 @@ section.blk{padding:72px 0 8px}
 .eyebrow{font-family:var(--mono);font-size:12.5px;color:var(--mute);display:flex;align-items:center;gap:8px;margin-bottom:14px}
 .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
 h2{font-size:clamp(28px,4.6vw,46px);line-height:1.18;letter-spacing:-.04em;font-weight:800}
-h2 .g{color:var(--faint)}
+h2 .g{color:#5f5f58}
 .sub{color:var(--ink2);font-size:16.5px;margin-top:14px;max-width:40em}
 
 /* ---------- demo window ---------- */
@@ -190,13 +190,13 @@ h2 .g{color:var(--faint)}
 .ph p{color:var(--mute);font-size:14px;margin-top:6px}
 
 /* picker + session info */
-.picker{display:flex;align-items:center;gap:8px;margin-top:18px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.picker{display:flex;align-items:center;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
 .picker::-webkit-scrollbar{display:none}
 .picker .lbl{font-family:var(--mono);font-size:12px;color:var(--mute);white-space:nowrap;margin-right:4px}
 .pick{white-space:nowrap;border:1px solid var(--line2);background:var(--card);border-radius:99px;padding:9px 16px;font-weight:700;font-size:14.5px;display:inline-flex;align-items:center;gap:8px}
 .pick i{width:8px;height:8px;border-radius:50%;background:var(--c)}
 .pick.on{background:var(--ink);color:#fff;border-color:var(--ink)}
-.sinfo{display:grid;grid-template-columns:1fr 1.1fr;gap:28px;margin-top:26px;padding:24px 4px 0;border-top:1px solid var(--line)}
+.sinfo{display:grid;grid-template-columns:1fr 1.1fr;gap:28px;margin:18px 0 22px;padding:22px 4px 0;border-top:1px solid var(--line)}
 @media(max-width:760px){.sinfo{grid-template-columns:1fr;gap:14px}}
 .sinfo .tag{font-family:var(--mono);font-size:12px;color:var(--mute);display:flex;align-items:center;gap:7px}
 .sinfo .tag i{width:8px;height:8px;border-radius:50%;background:var(--c)}
@@ -310,6 +310,10 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:60px 0 50px;fo
     <p class="sub">말로만 듣는 AI가 아니라, 실제로 일하는 장면을 보고 직접 만들어 봅니다.</p>
 
     <div class="demo">
+      <div class="picker" id="picker"><span class="lbl">세션을 골라 보세요</span></div>
+
+      <div class="sinfo" id="sinfo"></div>
+
       <div class="win">
         <div class="win-bar"><i></i><i></i><i></i><span class="win-title" id="winTitle">#여는마당 · NEIS 복무 상신</span><span class="status" id="status"><b></b><span id="statusTxt">대기</span></span></div>
 
@@ -421,9 +425,6 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:60px 0 50px;fo
         </div>
       </div>
 
-      <div class="picker" id="picker"><span class="lbl">세션을 골라 보세요</span></div>
-
-      <div class="sinfo" id="sinfo"></div>
     </div>
   </section>
 
@@ -604,7 +605,7 @@ SESSIONS.forEach((s, i) => {
 function renderInfo(i) {
   const s = SESSIONS[i];
   sinfo.innerHTML = `<div><div class="tag" style="--c:${s.c}"><i></i>${s.tag}</div><h3>${s.title}</h3><div class="by">${s.by}</div></div>
-    <ol>${s.topics.map((t, k) => `<li><span class="n">0${k+1}</span><span>${t}${s.demoAt === k ? '<span class="here">▲ 위 시연</span>' : ''}</span></li>`).join('')}</ol>`;
+    <ol>${s.topics.map((t, k) => `<li><span class="n">0${k+1}</span><span>${t}</span></li>`).join('')}</ol>`;
 }
 
 function selectSession(i) {
@@ -642,9 +643,9 @@ const chips = [...document.querySelectorAll('#plan .chip')];
 const logs = [...document.querySelectorAll('#log li')];
 const Q = '내일 08:10~09:10 육아시간 나이스에 상신해 줘';
 
-const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const SPEED = 1.8; // 클수록 느리게
 let runId = 0, played = false;
-const sleep = (ms, id) => new Promise((res, rej) => setTimeout(() => id === runId ? res() : rej('stop'), reduce ? 0 : ms));
+const sleep = (ms, id) => new Promise((res, rej) => setTimeout(() => id === runId ? res() : rej('stop'), ms * SPEED));
 async function typeIn(el, txt, sp, id) { el.textContent = ''; for (const ch of txt) { el.textContent += ch; await sleep(sp, id); } }
 
 function setStatus(cls, txt) { const s = $id('status'); s.className = 'status ' + cls; $id('statusTxt').textContent = txt; }
