@@ -217,9 +217,12 @@ h2 .g{color:#5f5f58}
 .srow time small{display:block;color:var(--mute);font-size:11px}
 .srow .all{grid-column:2/4;font-weight:700}
 .srow .rest{grid-column:2/4;color:var(--mute)}
-.pt{display:inline-flex;align-items:center;gap:6px;font-weight:700;margin-right:12px;white-space:nowrap}
+.srow>span:not(.all):not(.rest){display:grid;gap:10px}
+.pt{display:block}
+.pt .pn{display:inline-flex;align-items:center;gap:6px;font-weight:700}
 .pt i{width:8px;height:8px;border-radius:50%;background:var(--c)}
-@media(max-width:600px){.srow{grid-template-columns:86px 1fr 1fr;font-size:14px}.pt{display:flex;margin:2px 0}}
+.pt small{display:block;font-size:13.5px;color:var(--ink2);line-height:1.45;margin-top:1px;padding-left:14px}
+@media(max-width:600px){.sched{padding:6px 14px}.srow{grid-template-columns:82px 1fr 1fr;font-size:14px;gap:10px;align-items:start}.srow time{font-size:11px;white-space:nowrap;padding-top:2px}.pt small{font-size:12.5px;padding-left:0}}
 .note{font-size:13.5px;color:var(--mute);margin-top:14px}
 
 /* prep */
@@ -435,15 +438,15 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:60px 0 50px;fo
     <div class="card sched">
       <div class="srow h"><span>시간</span><span>1조</span><span>2조</span></div>
       <div class="srow"><time>15:00–15:15</time><span class="all">등록, 조 확인</span></div>
-      <div class="srow"><time>15:15–15:40</time><span class="all">여는 마당 <span style="color:var(--mute);font-weight:500">· 유성욱</span></span></div>
+      <div class="srow"><time>15:15–15:40</time><span class="all">여는 마당</span></div>
       <div class="srow"><time>15:40–15:50</time><span class="rest">휴식 및 이동</span></div>
       <div class="srow"><time>15:50–16:40<small>1회차</small></time>
-        <span><span class="pt" style="--c:var(--p1)"><i></i>파트 1</span><span class="pt" style="--c:var(--p2)"><i></i>파트 2</span></span>
-        <span><span class="pt" style="--c:var(--p3)"><i></i>파트 3</span><span class="pt" style="--c:var(--p4)"><i></i>파트 4</span></span></div>
+        <span><span class="pt" style="--c:var(--p1)"><span class="pn"><i></i>파트 1</span><small>학생상담보다 쉬운 AI 대화</small></span><span class="pt" style="--c:var(--p2)"><span class="pn"><i></i>파트 2</span><small>코딩 몰라도 OK! 우리 학교 체육대회 앱 만들기</small></span></span>
+        <span><span class="pt" style="--c:var(--p3)"><span class="pn"><i></i>파트 3</span><small>알.쓸.Ai — 알아두면 쓸데있는 신비한 AI 체육</small></span><span class="pt" style="--c:var(--p4)"><span class="pn"><i></i>파트 4</span><small>스마트한 체육수업의 시작 — iPad와 AI로 실현하는 IB 탐구학습</small></span></span></div>
       <div class="srow"><time>16:40–16:50</time><span class="rest">휴식 및 이동</span></div>
       <div class="srow"><time>16:50–17:40<small>2회차</small></time>
-        <span><span class="pt" style="--c:var(--p3)"><i></i>파트 3</span><span class="pt" style="--c:var(--p4)"><i></i>파트 4</span></span>
-        <span><span class="pt" style="--c:var(--p1)"><i></i>파트 1</span><span class="pt" style="--c:var(--p2)"><i></i>파트 2</span></span></div>
+        <span><span class="pt" style="--c:var(--p3)"><span class="pn"><i></i>파트 3</span><small>알.쓸.Ai — 알아두면 쓸데있는 신비한 AI 체육</small></span><span class="pt" style="--c:var(--p4)"><span class="pn"><i></i>파트 4</span><small>스마트한 체육수업의 시작 — iPad와 AI로 실현하는 IB 탐구학습</small></span></span>
+        <span><span class="pt" style="--c:var(--p1)"><span class="pn"><i></i>파트 1</span><small>학생상담보다 쉬운 AI 대화</small></span><span class="pt" style="--c:var(--p2)"><span class="pn"><i></i>파트 2</span><small>코딩 몰라도 OK! 우리 학교 체육대회 앱 만들기</small></span></span></div>
       <div class="srow"><time>17:40–18:00</time><span class="all">나눔 마당, 사후 설문, 마무리</span></div>
     </div>
     <p class="note">※ 신청 규모에 따라 전체 순차형으로 바뀔 수 있습니다. 조는 당일 등록 때 안내합니다.</p>
