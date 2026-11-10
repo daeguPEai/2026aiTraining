@@ -313,6 +313,77 @@ h2 .g{color:#5f5f58}
 .ap-upd{font-size:9.5px;color:#64748b;text-align:right;margin-top:4px;opacity:0;transition:.3s}
 .ap-upd.in{opacity:1}
 
+
+/* ---- 파트1: 타이머 만드는 화면 ---- */
+.tbuild{background:#1b1d22}
+.tb-bg{position:absolute;inset:0;background:#1b1d22 center/cover no-repeat;opacity:0;transition:opacity .8s}
+.tb-bg.in{opacity:.9}
+.tb-sc{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,12,.75),rgba(10,10,12,.15) 70%)}
+.tb-copy{position:absolute;left:14px;bottom:16px;right:46%;color:#fff}
+.tb-copy .k{display:inline-block;font-size:9.5px;font-weight:700;background:rgba(255,255,255,.18);border-radius:99px;padding:2px 8px}
+.tb-copy b{display:block;font-size:19px;letter-spacing:-.03em;line-height:1.25;margin:5px 0 3px;min-height:24px}
+.tb-copy span{font-size:11px;opacity:.85}
+.tb-sw{position:absolute;right:12px;bottom:14px;width:41%;background:rgba(255,255,255,.94);border-radius:12px;padding:9px 10px;font-size:10.5px}
+.tb-sw .st2{display:inline-block;font-weight:700;background:var(--soft);border-radius:6px;padding:1px 7px}
+.tb-sw .dg{font-family:var(--mono);font-size:22px;font-weight:600;margin:3px 0}
+.tb-sw .trk{height:5px;border-radius:3px;background:var(--line)}
+.tb-sw .bz{margin-top:6px;color:var(--mute);font-weight:600}
+.tb-res{position:absolute;right:12px;top:12px;display:flex;gap:5px}
+.tb-res span{font-size:10px;font-weight:700;border-radius:6px;padding:2px 7px;color:#fff}
+.tb-res .ok{background:var(--ok)}.tb-res .ng{background:#d1352a}
+.tbuild .wf{transform:translateY(8px)}
+.tbuild .wf.in{transform:none}
+
+/* ---- 파트1: 강당 TV ---- */
+.tv{position:absolute;left:20px;top:84px;width:640px;height:360px;border:10px solid #151515;border-radius:14px;overflow:hidden;background:#1b1d22;box-shadow:0 30px 50px -30px rgba(0,0,0,.5)}
+.tv-stand{position:absolute;left:300px;top:452px;width:80px;height:22px;background:#151515;border-radius:0 0 8px 8px}
+.tv-stand::after{content:"";position:absolute;left:-40px;top:22px;width:160px;height:6px;border-radius:3px;background:#151515}
+.tv video,.tv .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tv .poster{background:center/cover no-repeat}
+.tv .okv{opacity:0;transition:opacity 1s}
+.tv.ok .okv{opacity:1}
+.tv .scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,8,10,.7),rgba(8,8,10,.1) 65%)}
+.tv .copy{position:absolute;left:28px;bottom:30px;width:46%;color:#fff;transition:opacity .6s,transform .6s}
+.tv.ok .copy{opacity:0;transform:translateY(-10px)}
+.tv .copy .k{display:inline-block;font-size:12px;font-weight:700;background:rgba(255,255,255,.18);border-radius:99px;padding:3px 10px}
+.tv .copy b{display:block;font-size:34px;letter-spacing:-.04em;line-height:1.2;margin:8px 0 6px}
+.tv .copy span{font-size:15px;opacity:.9}
+.tv .sw{position:absolute;right:22px;bottom:24px;width:230px;background:rgba(255,255,255,.95);border-radius:16px;padding:14px 16px}
+.tv .sw .st2{display:inline-block;font-size:12px;font-weight:700;background:var(--soft);border-radius:7px;padding:2px 9px}
+.tv .sw .st2.run{background:#fff1ea;color:var(--accent)}
+.tv .sw .st2.ok{background:#e7f6ee;color:var(--ok)}
+.tv .sw .dg{font-family:var(--mono);font-size:40px;font-weight:600;letter-spacing:-.02em;margin:4px 0 6px}
+.tv .sw .trk{height:7px;border-radius:4px;background:var(--line);overflow:hidden}
+.tv .sw .trk i{display:block;height:100%;width:0;background:var(--accent)}
+.tv.ok .sw .trk i{background:var(--ok)}
+.tv .sw .goal{font-size:11.5px;color:var(--mute);margin-top:6px;display:flex;justify-content:space-between}
+.tv .res{position:absolute;left:28px;top:24px;background:rgba(255,255,255,.95);border-radius:14px;padding:12px 16px;opacity:0;transform:translateY(8px);transition:.5s .3s}
+.tv.ok .res{opacity:1;transform:none}
+.tv .res b{display:flex;align-items:center;gap:7px;font-size:20px;letter-spacing:-.03em}
+.tv .res b::before{content:"✓";width:24px;height:24px;border-radius:50%;background:var(--ok);color:#fff;font-size:14px;display:grid;place-items:center}
+.tv .res span{font-size:13px;color:var(--ink2)}
+.tv .ff{position:absolute;right:22px;top:20px;font-family:var(--mono);font-size:11px;font-weight:600;color:#fff;background:rgba(0,0,0,.45);border-radius:6px;padding:2px 8px;opacity:0;transition:.3s}
+.tv .ff.in{opacity:1}
+.buzz{position:absolute;left:520px;top:470px;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700}
+.buzz i{width:58px;height:58px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff7a4d,#d63a12);box-shadow:0 6px 0 #8f2508,0 10px 18px -6px rgba(0,0,0,.4);transition:transform .1s,box-shadow .1s}
+.buzz.press i{transform:translateY(5px);box-shadow:0 1px 0 #8f2508}
+.pstage.nar .tv{left:10px;top:90px;width:400px;height:225px;border-width:7px}
+.pstage.nar.tvstage .pcap h4{font-size:22px}
+.pstage.nar .tv-stand{left:170px;top:322px}
+.pstage.nar .buzz{left:286px;top:344px}
+.pstage.nar .tv .copy{left:16px;bottom:16px;width:52%}
+.pstage.nar .tv .copy .k{font-size:9.5px;padding:2px 7px}
+.pstage.nar .tv .copy b{font-size:22px;margin:5px 0 3px}
+.pstage.nar .tv .copy span{font-size:11px}
+.pstage.nar .tv .sw{right:12px;bottom:12px;width:156px;padding:9px 11px;border-radius:12px}
+.pstage.nar .tv .sw .dg{font-size:26px}
+.pstage.nar .tv .sw .goal{font-size:10px}
+.pstage.nar .tv .res{left:16px;top:14px;padding:8px 12px}
+.pstage.nar .tv .res b{font-size:16px}
+.pstage.nar .tv .res span{font-size:11px}
+.pstage.nar .tv .ff{right:12px;top:12px}
+.buzz small{display:block;font-family:var(--mono);font-size:11px;color:var(--mute);font-weight:600}
+
 /* placeholder */
 .ph{display:grid;place-items:center;text-align:center;min-height:420px;border:1.5px dashed var(--line2);border-radius:18px;padding:30px 20px}
 .ph .big{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-family:var(--mono);font-weight:600;color:#fff;margin:0 auto 14px}
@@ -550,6 +621,67 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:60px 0 50px;fo
 
 
 
+
+        <div class="win-body demo" id="demo1" hidden>
+         <div class="chatv">
+          <div class="msg hide" data-m="me">
+            <span class="av me">나</span>
+            <div class="grow"><div class="who">나 <span class="meta">점심시간 · 12:40</span></div><div class="bubble qtext"></div></div>
+          </div>
+          <div class="msg hide" data-m="ask">
+            <span class="av ai">AI</span>
+            <div class="grow"><div class="who">AI 에이전트</div><p class="say" style="margin:0">좋아요! 만들기 전에 세 가지만 정해 주세요.<br>① 달리는 거리 ② 목표 시간 ③ 어떤 이야기로 할까요?</p></div>
+          </div>
+          <div class="msg hide" data-m="ans">
+            <span class="av me">나</span>
+            <div class="grow"><div class="who">나</div><div class="bubble" id="ansText"></div></div>
+          </div>
+          <div class="msg hide" data-m="ai">
+            <span class="av ai">AI</span>
+            <div class="grow">
+              <div class="who">AI 에이전트 <span class="tool">도구 · Claude + 영상 생성</span></div>
+              <p class="say">등교하다 버스를 놓치기 직전, 그 이야기로 타이머를 만들게요.</p>
+              <div class="work">
+                <div class="wlbl">⌁ 계획</div>
+                <div class="plan"></div>
+                <div class="work-grid">
+                  <div><div class="wlbl">▣ 화면 · 타이머 만드는 중</div><div class="screen tbuild" id="tb">
+  <div class="tb-bg" style="background-image:url('https://usuu94152-collab.github.io/running-timer/hero%20page.jpg')"></div><div class="tb-sc wf"></div>
+  <div class="tb-copy wf"><span class="k">오늘의 체육수업 · 목표 시간 안에 달리기</span><b id="tbT"></b><span>정류장까지 120 m, 버스 출발까지 10 초.</span></div>
+  <div class="tb-sw wf"><span class="st2">대기</span><div class="dg">00:00.00</div><div class="trk"></div><div class="bz">부저: 스페이스바</div></div>
+  <div class="tb-res wf"><span class="ok">성공 장면</span><span class="ng">실패 장면</span></div>
+</div></div>
+                  <div><div class="wlbl">≡ 작업 로그</div><ul class="log"></ul></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="msg hide" data-m="done">
+            <span class="av ai">AI</span>
+            <div class="grow"><div class="who">AI 에이전트</div><div class="rep"><b>이야기 타이머 완성</b><span>301번 버스 · 120 m · 목표 10초</span><span>부저 한 번에 출발, 한 번에 기록 · 성공하면 ‘탑승 완료’, 늦으면 버스가 떠나요</span></div><br><span class="learn">이야기만 바꿔서 <b>지그재그 · 이어달리기 · 장애물</b>까지</span></div>
+          </div>
+          <div class="msg hide" data-m="thx" style="margin-bottom:8px">
+            <span class="av me">나</span>
+            <div class="grow"><div class="who">나 <span class="meta">12:55</span></div><div class="bubble">5교시에 강당 TV로 바로 띄워 볼게!</div></div>
+          </div>
+         </div>
+         <div class="appv" id="appv1"><div class="pstage tvstage" data-w="680" data-h="560" data-wn="420" data-hn="420" style="height:560px">
+  <div class="pcap"><div class="k">▶ 완성된 타이머 · 강당 TV</div><h4 id="tvCap">출발 신호와 함께 이야기가 시작되고</h4></div>
+  <div class="tv" id="tv">
+    <div class="poster" style="background-image:url('https://usuu94152-collab.github.io/running-timer/hero%20page.jpg')"></div>
+    <video id="tvMain" muted playsinline preload="none"></video>
+    <video class="okv" id="tvOk" muted playsinline preload="none"></video>
+    <div class="scrim"></div>
+    <div class="copy"><span class="k">오늘의 체육수업 · 목표 시간 안에 달리기</span><b>301번 버스,<br>곧 출발!</b><span>정류장까지 120 m, 버스 출발까지 10 초.</span></div>
+    <div class="res"><b>탑승 완료</b><span>목표 10초보다 <strong>0.38초</strong> 빨리 도착했어요.</span></div>
+    <div class="ff" id="tvFF">▶▶ 빨리 감기</div>
+    <div class="sw"><span class="st2" id="tvSt">대기</span><div class="dg" id="tvDg">00:00.00</div><div class="trk"><i id="tvTrk"></i></div><div class="goal"><span>목표 10.00초</span><span>120 m</span></div></div>
+  </div>
+  <div class="tv-stand"></div>
+  <div class="buzz" id="buzz"><i></i><span>부저<small>스페이스바</small></span></div>
+</div></div>
+          <div class="ctrl"><button class="play">▶ 재생</button><span class="hint">학생과 상담하듯, AI와 대화하면 앱이 됩니다.</span></div>
+        </div>
         <div class="win-body demo" id="demo2" hidden>
          <div class="chatv">
           <div class="msg hide" data-m="me">
@@ -590,7 +722,7 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:60px 0 50px;fo
             <div class="grow"><div class="who">나 <span class="meta">21:40</span></div><div class="bubble">좋아, 이번엔 종이 집계표 없이 간다! 실제 화면 보여 줘.</div></div>
           </div>
          </div>
-         <div class="appv" id="appv"><div class="pstage" id="pstage">
+         <div class="appv" id="appv"><div class="pstage" id="pstage" data-w="680" data-wn="530" data-h="660">
   <div class="pcap"><div class="k">▶ 완성된 앱 · 체육대회 당일</div><h4 id="pcapT">심판이 휴대폰으로 입력하면</h4></div>
   <div class="phones">
     <div class="phn"><span class="notch"></span>
@@ -847,7 +979,7 @@ const SESSIONS = [
   { key:'여는 마당', c:'var(--p0)', tag:'여는 마당 · 전체', win:'#여는마당 · NEIS 복무 상신',
     title:'교사와 학생 사이 AI — 체육교사를 위한 에이전틱 AI 활용 사례', by:'대진고등학교 유성욱',
     topics:['AI 활용, 어디서부터 시작하면 될까?','AI를 활용한 NEIS 업무 간소화','상상하는 것들을 현실로'] },
-  { key:'파트 1', c:'var(--p1)', tag:'파트 1', win:'#파트1 · 준비 중',
+  { key:'파트 1', c:'var(--p1)', tag:'파트 1', win:'#파트1 · 이야기 타이머',
     title:'학생상담보다 쉬운 AI 대화', by:'대구일중학교 이길봉',
     topics:['AI 대화는 어떤 것인가?','강당에서 쓰는 간단한 타이머 만들기','내가 원하는 앱 만들기 대화법 나눔 및 실습'] },
   { key:'파트 2', c:'var(--p2)', tag:'파트 2', win:'#파트2 · 체육대회 앱',
@@ -894,6 +1026,92 @@ document.querySelectorAll('.dTxt').forEach(e => e.textContent = D_SHORT);
 $id('repDate').textContent = `${tmr.getMonth()+1}.${tmr.getDate()}(${'일월화수목금토'[tmr.getDay()]}) 08:10~09:10`;
 
 const DEMOS = {
+
+  /* ---------- 파트 1: 대화로 이야기 타이머 만들기 → 강당 TV ---------- */
+  1: {
+    q: '체육 시간에 쓸 달리기 타이머 만들어 줘. 숫자만 가는 거 말고, 이야기가 있는 타이머로.',
+    plan: ['이야기 정하기', '장면 연결', '타이머 화면', '부저 연결', '결과 장면'],
+    log: ['이야기 · 301번 버스 놓치기 직전', '장면 영상 3개 (출발·성공·실패)', '120 m · 목표 10초 스톱워치', '부저(스페이스바)로 출발·기록', '성공·실패 결과 문구', '강당 TV 전체 화면 모드'],
+    times: ['12:44', '12:46', '12:49', '12:51', '12:52', '12:53'],
+    reset() {
+      $id('demo1').classList.remove('appmode');
+      $id('ansText').textContent = '';
+      document.querySelectorAll('#tb .wf, #tb .tb-bg').forEach(e => e.classList.remove('in'));
+      $id('tbT').textContent = '';
+      const tv = $id('tv'); tv.classList.remove('ok');
+      ['tvMain', 'tvOk'].forEach(id => { const v = $id(id); try { v.pause(); } catch (e) {} });
+      $id('tvSt').textContent = '대기'; $id('tvSt').className = 'st2';
+      $id('tvDg').textContent = '00:00.00'; $id('tvTrk').style.width = '0';
+      $id('tvFF').classList.remove('in'); $id('buzz').classList.remove('press');
+      $id('tvCap').textContent = '출발 신호와 함께 이야기가 시작되고';
+    },
+    async pre(c, show) {
+      await c.sleep(300); show('ask'); await c.sleep(1900);
+      show('ans'); await c.sleep(300);
+      await c.type($id('ansText'), '120m, 10초. 등교하다 301번 버스 놓치기 직전 상황으로!', 45);
+      await c.sleep(600);
+    },
+    async run(c) {
+      const tb = $id('tb');
+      c.chip(0, 'run'); c.log(0, 'run');
+      tb.querySelector('.tb-sc').classList.add('in'); tb.querySelector('.tb-copy').classList.add('in');
+      await c.type($id('tbT'), '301번 버스, 곧 출발!', 70);
+      await c.sleep(300); c.chip(0, 'done'); c.log(0, 'done');
+
+      c.chip(1, 'run'); c.log(1, 'run');
+      tb.querySelector('.tb-bg').classList.add('in'); await c.sleep(1300);
+      c.chip(1, 'done'); c.log(1, 'done');
+
+      c.chip(2, 'run'); c.log(2, 'run');
+      tb.querySelector('.tb-sw').classList.add('in'); await c.sleep(1100);
+      c.chip(2, 'done'); c.log(2, 'done');
+
+      c.chip(3, 'run'); c.log(3, 'run');
+      const bz = tb.querySelector('.bz'); bz.style.color = 'var(--accent)'; await c.sleep(900); bz.style.color = '';
+      c.chip(3, 'done'); c.log(3, 'done');
+
+      c.chip(4, 'run'); c.log(4, 'run');
+      tb.querySelector('.tb-res').classList.add('in'); await c.sleep(900);
+      c.log(4, 'done'); c.log(5, 'run'); await c.sleep(700);
+      c.chip(4, 'done'); c.log(5, 'done');
+    },
+    async after(c) {
+      const RT = 'https://usuu94152-collab.github.io/running-timer/';
+      const tv = $id('tv'), main = $id('tvMain'), ok = $id('tvOk');
+      if (!main.src) { main.src = RT + 'hero%20page.mp4?v=2'; ok.src = RT + 'CUT03-B-A-SMALL-KINDNESS-6-seconds-1.mp4'; }
+      await c.sleep(1200);
+      const r = $id('demo1'); r.classList.add('appmode'); fitStage();
+      r.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      try { main.currentTime = 0.4; } catch (e) {}
+      main.play().catch(() => {});
+      await c.sleep(2600);
+
+      // 부저: 출발
+      const bz = $id('buzz'); bz.classList.add('press'); await c.sleep(180); bz.classList.remove('press');
+      $id('tvCap').textContent = '부저 한 번에 출발,';
+      const st = $id('tvSt'); st.textContent = '달리는 중'; st.className = 'st2 run';
+      $id('tvFF').classList.add('in');
+      const END = 9.62, STEPS = 90;
+      for (let i = 1; i <= STEPS; i++) {
+        const t = END * i / STEPS;
+        $id('tvDg').textContent = `00:${String(Math.floor(t)).padStart(2, '0')}.${String(Math.floor((t % 1) * 100)).padStart(2, '0')}`;
+        $id('tvTrk').style.width = Math.min(100, t / 10 * 100) + '%';
+        await c.sleep(30);
+      }
+      $id('tvDg').textContent = '00:09.62';
+      $id('tvFF').classList.remove('in');
+
+      // 부저: 도착 → 성공 장면
+      bz.classList.add('press'); await c.sleep(180); bz.classList.remove('press');
+      $id('tvCap').textContent = '한 번 더 누르면 기록 끝';
+      st.textContent = '성공'; st.className = 'st2 ok';
+      try { ok.currentTime = 0; } catch (e) {}
+      ok.play().catch(() => {}); tv.classList.add('ok');
+      await c.sleep(3600);
+      $id('tvCap').textContent = '이야기만 바꾸면 다른 종목도';
+      await c.sleep(1500);
+    }
+  },
 
   /* ---------- 파트 2: 대화로 체육대회 앱 만들기 → 휴대폰 화면 ---------- */
   2: {
@@ -1103,11 +1321,15 @@ function apRank(sc, mark) {
   });
 }
 function fitStage() {
-  const v = $id('appv'), st = $id('pstage'); if (!v || !st) return;
-  const w = v.clientWidth || 680, nar = w < 600, W = nar ? 530 : 680, k = Math.min(1, w / W);
-  st.classList.toggle('nar', nar);
-  st.style.transform = `scale(${k})`; st.style.left = Math.max(0, (w - W * k) / 2) + 'px';
-  v.style.height = (660 * k) + 'px';
+  document.querySelectorAll('.appv').forEach(v => {
+    const st = v.querySelector('.pstage'); if (!st || !v.offsetParent) return;
+    const W0 = +st.dataset.w || 680, Wn = +st.dataset.wn || W0;
+    const w = v.clientWidth || W0, nar = w < 600 && Wn < W0, W = nar ? Wn : W0, k = Math.min(1, w / W);
+    const H = nar ? (+st.dataset.hn || +st.dataset.h || 660) : (+st.dataset.h || 660);
+    st.classList.toggle('nar', nar); st.style.width = W + 'px';
+    st.style.transform = `scale(${k})`; st.style.left = Math.max(0, (w - W * k) / 2) + 'px';
+    v.style.height = (H * k) + 'px';
+  });
 }
 addEventListener('resize', fitStage);
 
@@ -1172,6 +1394,7 @@ async function play(n) {
     for (const ch of d.q) { q.innerHTML = q.textContent + ch + '<span class="caret"></span>'; await c.sleep(45); }
     q.textContent = d.q;
     await c.sleep(500);
+    if (d.pre) await d.pre(c, show);
     show('ai'); await c.sleep(700);
     await d.run(c);
     await c.sleep(500);
