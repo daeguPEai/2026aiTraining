@@ -1490,7 +1490,7 @@ f.addEventListener('submit', async e => {
     if (r.ok) {
       $id('formCard').style.display = 'none';
       const done = $id('done');
-      $id('doneNo').textContent = `${data.name} 선생님 · 접수번호 ${r.no}`;
+      $id('doneNo').textContent = `${data.name} 선생님`;
       done.style.display = 'block';
       done.scrollIntoView({ behavior: 'smooth', block: 'start' });
       return;
