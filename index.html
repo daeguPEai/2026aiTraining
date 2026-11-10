@@ -8,209 +8,460 @@
 <meta property="og:title" content="체육교사 대상 AI 활용 사례 연수 신청">
 <meta property="og:description" content="11. 27.(금) 15:00~18:00 · 대구일중학교 · 2026. AI 체육수업 실천 연구회">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&display=swap">
 <style>
 :root{
-  --ink:#16213a; --sub:#56607a; --line:#e3e7ef; --bg:#f4f6fa; --card:#fff;
-  --blue:#1f4fd8; --blue-d:#163aa3; --yellow:#f5b800; --green:#1a9e5a; --red:#e2412e;
-  --r:16px;
+  --paper:#f7f7f4; --card:#fff; --ink:#151515; --ink2:#3b3b38; --mute:#7a7a72; --faint:#a9a9a0;
+  --line:#e4e3dd; --line2:#d2d1c9; --soft:#f0efea; --accent:#ff5a1f; --ok:#169c55;
+  --p0:#151515; --p1:#ff5a1f; --p2:#d19f00; --p3:#169c55; --p4:#c4245a;
+  --mono:"JetBrains Mono",Pretendard,ui-monospace,Menlo,monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%}
-body{font-family:Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;word-break:keep-all}
-.stripe{display:flex;height:6px}
-.stripe i{flex:1}
-.stripe i:nth-child(1){background:var(--blue)}.stripe i:nth-child(2){background:var(--yellow)}
-.stripe i:nth-child(3){background:var(--green)}.stripe i:nth-child(4){background:var(--red)}
-.wrap{max-width:720px;margin:0 auto;padding:0 18px 64px}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{font-family:Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;word-break:keep-all;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.narrow{max-width:720px;margin:0 auto}
+.mono{font-family:var(--mono);letter-spacing:.02em}
+
+/* top bar */
+.top{position:sticky;top:0;z-index:20;background:rgba(247,247,244,.86);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;height:60px;gap:16px}
+.brand{font-weight:800;letter-spacing:-.02em;display:flex;align-items:center;gap:8px;font-size:15px}
+.brand i{width:10px;height:10px;border-radius:3px;background:var(--accent)}
+.top nav{margin-left:auto;display:flex;gap:22px;font-size:14px;color:var(--ink2)}
+.top nav a{color:inherit;text-decoration:none}
+.top .cta-s{background:var(--ink);color:#fff;border-radius:99px;padding:8px 16px;font-weight:700;font-size:14px;text-decoration:none}
+@media(max-width:640px){.top nav{display:none}.top .cta-s{margin-left:auto}}
 
 /* hero */
-.hero{padding:40px 0 28px}
-.org{font-size:14px;font-weight:600;color:var(--blue);letter-spacing:-.01em}
-h1{font-size:clamp(26px,6.4vw,36px);line-height:1.28;letter-spacing:-.035em;margin:8px 0 14px;font-weight:800}
-h1 em{font-style:normal;background:linear-gradient(transparent 62%,#ffe58a 62%)}
-.lead{color:var(--sub);font-size:15.5px}
-.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
-.fact{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
-.fact b{display:block;font-size:12.5px;color:var(--sub);font-weight:600;margin-bottom:2px}
-.fact span{font-weight:700;font-size:15px;line-height:1.4;display:block}
-.fact small{display:block;color:var(--sub);font-size:13px;font-weight:500}
-@media(max-width:560px){.facts{grid-template-columns:1fr}.fact{display:flex;gap:12px;align-items:baseline}.fact b{width:40px;flex:none}}
-.cta{display:flex;gap:10px;margin-top:20px}
-.btn{appearance:none;border:0;border-radius:12px;font:inherit;font-weight:700;font-size:16px;padding:14px 20px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px}
-.btn-p{background:var(--blue);color:#fff}.btn-p:hover{background:var(--blue-d)}
-.btn-g{background:var(--card);color:var(--ink);border:1px solid var(--line)}
-.btn:disabled{opacity:.55;cursor:default}
+.hero{padding:72px 0 56px;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:end}
+@media(max-width:860px){.hero{grid-template-columns:1fr;padding:44px 0 36px;gap:28px}}
+.pill-note{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line2);background:var(--card);border-radius:99px;padding:6px 14px;font-size:13px;font-weight:600}
+.pill-note .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.pill-note .sep{width:1px;height:12px;background:var(--line2)}
+.pill-note .mono{font-size:12px;color:var(--mute)}
+h1{font-size:clamp(38px,6vw,66px);line-height:1.08;letter-spacing:-.05em;font-weight:800;margin:26px 0 22px}
+h1 .hl{display:inline-flex;align-items:center;gap:.18em;background:var(--soft);border-radius:.5em;padding:0 .22em 0 .16em}
+h1 .hl::before{content:"";width:.26em;height:.26em;border-radius:50%;background:var(--accent)}
+h1 .g{color:var(--faint)}
+.lead{font-size:17px;color:var(--ink2);max-width:34em}
+.facts{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:8px 22px}
+.facts div{display:grid;grid-template-columns:64px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.facts div:last-child{border-bottom:0}
+.facts dt{font-family:var(--mono);font-size:12px;color:var(--mute);padding-top:3px}
+.facts dd b{font-weight:700}
+.facts dd small{display:block;color:var(--mute);font-size:13.5px}
+.cta{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:99px;font-weight:700;font-size:16px;padding:14px 24px;text-decoration:none;cursor:pointer;border:0;font-family:inherit}
+.btn-k{background:var(--ink);color:#fff}.btn-k:hover{background:#000}
+.btn-o{background:var(--card);color:var(--ink);border:1px solid var(--line2)}
+.btn:disabled{opacity:.5;cursor:default}
 
-/* sections */
-section{margin-top:34px}
-h2{font-size:20px;letter-spacing:-.025em;font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:8px}
-h2 .n{width:26px;height:26px;border-radius:8px;background:var(--ink);color:#fff;font-size:14px;display:inline-grid;place-items:center}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+/* section heads */
+section.blk{padding:72px 0 8px}
+.eyebrow{font-family:var(--mono);font-size:12.5px;color:var(--mute);display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
+h2{font-size:clamp(28px,4.6vw,46px);line-height:1.18;letter-spacing:-.04em;font-weight:800}
+h2 .g{color:var(--faint)}
+.sub{color:var(--ink2);font-size:16.5px;margin-top:14px;max-width:40em}
 
-.opening{border-left:5px solid var(--ink)}
-.parts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
-@media(max-width:600px){.parts{grid-template-columns:1fr}}
-.part{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;border-top:5px solid var(--c)}
-.tag{display:inline-block;font-size:12px;font-weight:700;color:var(--c);background:color-mix(in srgb,var(--c) 12%,#fff);padding:2px 9px;border-radius:99px}
-.part h3,.opening h3{font-size:16.5px;letter-spacing:-.02em;line-height:1.4;margin:8px 0 4px}
-.who{font-size:13px;color:var(--sub);margin-bottom:8px}
-.part ol,.opening ol{padding-left:18px;font-size:14px;color:#2d3650}
-.part li,.opening li{margin:2px 0}
+/* ---------- demo window ---------- */
+.demo{margin-top:34px}
+.win{background:var(--card);border:1px solid var(--line2);border-radius:26px;overflow:hidden;box-shadow:0 30px 60px -40px rgba(20,20,10,.25)}
+.win-bar{display:flex;align-items:center;gap:7px;height:52px;padding:0 18px;border-bottom:1px solid var(--line)}
+.win-bar>i{width:10px;height:10px;border-radius:50%;background:var(--line2)}
+.win-title{margin-left:12px;font-family:var(--mono);font-size:13px;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.status{margin-left:auto;display:inline-flex;align-items:center;gap:7px;background:var(--soft);border-radius:9px;padding:5px 11px;font-size:12.5px;font-weight:600;white-space:nowrap}
+.status b{width:7px;height:7px;border-radius:50%;background:var(--faint)}
+.status.run b{background:var(--accent);animation:blink 1s infinite}
+.status.done b{background:var(--ok)}
+@keyframes blink{50%{opacity:.25}}
+.win-body{padding:26px 28px 22px}
+@media(max-width:640px){.win-body{padding:18px 14px 16px}.win-bar{padding:0 14px}}
 
-table{width:100%;border-collapse:collapse;font-size:14px}
-th,td{padding:10px 8px;border-bottom:1px solid var(--line);text-align:center}
-th{font-size:12.5px;color:var(--sub);font-weight:600}
-td:first-child{white-space:nowrap;color:var(--sub);font-variant-numeric:tabular-nums;font-size:13px}
-td.all{font-weight:600}
-td.rest{color:var(--sub);font-size:13px}
-.chip{display:inline-block;font-size:12.5px;font-weight:700;padding:2px 8px;border-radius:7px;margin:1px;color:#fff;background:var(--c)}
-.note{font-size:13px;color:var(--sub);margin-top:10px}
+.msg{display:flex;gap:12px;margin-bottom:18px;transition:opacity .35s,transform .35s,max-height .6s ease,margin .35s}
+.msg{max-height:1600px;overflow:hidden}
+.msg.hide{opacity:0;transform:translateY(6px);max-height:0;margin-bottom:0}
+.av{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:800}
+.av.me{background:var(--ink);color:#fff}
+.av.ai{background:var(--accent);color:#fff;font-family:var(--mono);font-size:11px}
+.who{font-size:13.5px;font-weight:700;margin-bottom:5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.tool{font-family:var(--mono);font-size:11.5px;font-weight:600;color:var(--ink2);border:1px solid var(--line2);border-radius:7px;padding:1px 7px}
+.bubble{display:inline-block;background:var(--soft);border-radius:14px;padding:10px 15px;font-size:15.5px;min-height:44px;min-width:40px}
+.bubble .caret{display:inline-block;width:2px;height:1em;background:var(--ink);vertical-align:-2px;margin-left:1px;animation:blink .8s infinite}
+.grow{flex:1;min-width:0}
+.say{font-size:15px;color:var(--ink2);margin-bottom:10px}
 
-.prep{display:grid;gap:10px}
-.prep .card{display:flex;gap:14px;align-items:flex-start;padding:16px 18px}
-.ico{flex:none;width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-size:19px;background:#eef2fd}
-.prep b{display:block;font-size:15px}
-.prep p{font-size:14px;color:var(--sub)}
+.work{border:1px solid var(--line2);border-radius:18px;padding:16px 18px}
+.wlbl{font-family:var(--mono);font-size:11.5px;color:var(--mute);margin-bottom:9px;display:flex;align-items:center;gap:6px}
+.plan{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}
+.chip{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line2);border-radius:99px;padding:5px 12px 5px 6px;font-size:13.5px;font-weight:600;color:var(--faint);transition:.25s;background:var(--card)}
+.chip .ck{width:20px;height:20px;border-radius:50%;border:1.5px dashed var(--line2);display:grid;place-items:center;font-size:11px;color:#fff;transition:.25s}
+.chip.run{color:var(--ink);border-color:var(--ink)}
+.chip.run .ck{border:2px solid var(--accent);border-top-color:transparent;animation:spin .8s linear infinite}
+.chip.done{color:var(--ink)}
+.chip.done .ck{background:var(--ink);border:0}
+.chip.done .ck::after{content:"✓"}
+@keyframes spin{to{transform:rotate(360deg)}}
+.work-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:18px}
+@media(max-width:760px){.work-grid{grid-template-columns:1fr}}
+
+/* mini NEIS */
+.neis{position:relative;height:300px;border:1px solid var(--line2);border-radius:12px;overflow:hidden;background:#fafaf8;font-size:12.5px}
+.nbar{height:28px;display:flex;align-items:center;gap:5px;padding:0 10px;background:var(--soft);border-bottom:1px solid var(--line)}
+.nbar i{width:7px;height:7px;border-radius:50%;background:var(--line2)}
+.nbar .url{margin-left:8px;font-family:var(--mono);font-size:11px;color:var(--mute);background:var(--card);border-radius:6px;padding:1px 10px}
+.nhead{height:30px;display:flex;align-items:center;gap:12px;padding:0 12px;background:#2a2c30;color:#e9e9e4;font-size:11.5px}
+.nhead b{font-weight:700;color:#fff}
+.nhead span.on{color:#fff;border-bottom:2px solid var(--accent);padding-bottom:2px}
+.nhead .usr{margin-left:auto;color:#b9b9b2;font-size:10.5px}
+.scr{position:absolute;left:0;right:0;top:28px;bottom:0;opacity:0;transition:opacity .3s;pointer-events:none}
+.scr.on{opacity:1}
+.nbtn{display:inline-block;border:1px solid #c9c8c0;background:#fff;border-radius:5px;padding:3px 10px;font-size:11.5px;font-weight:600;white-space:nowrap;transition:box-shadow .2s}
+.nbtn.p{background:#2a2c30;border-color:#2a2c30;color:#fff}
+.act{box-shadow:0 0 0 3px rgba(255,90,31,.45);position:relative}
+.login{display:grid;place-items:center;height:100%}
+.lcard{background:#fff;border:1px solid var(--line2);border-radius:10px;padding:16px 18px;width:min(86%,270px);display:grid;gap:9px}
+.lcard b{font-size:14px}.lcard small{color:var(--mute);margin-top:-6px}
+.lcard .row{display:flex;align-items:center;gap:8px;font-size:11.5px;color:var(--mute)}
+.inp{flex:1;border:1px solid #c9c8c0;border-radius:5px;background:#fff;min-height:24px;padding:2px 8px;font-size:12px;color:var(--ink);display:flex;align-items:center;transition:box-shadow .2s;white-space:nowrap;overflow:hidden}
+.ncont{padding:10px 12px}
+.ntitle{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.ntitle b{font-size:13px}.ntitle small{color:var(--mute);font-size:10.5px}
+.ntitle .nbtn{margin-left:auto}
+.grid{border-top:2px solid #2a2c30}
+.gr{display:grid;grid-template-columns:62px 72px 1fr 58px;gap:6px;padding:6px 4px;border-bottom:1px solid var(--line);font-size:11.5px;white-space:nowrap;overflow:hidden;transition:background .4s}
+.gr.h{background:var(--soft);font-weight:700;font-size:11px}
+.gr .ok{color:var(--ok);font-weight:700}
+.gr .ing{color:var(--accent);font-weight:700}
+.gr.new{background:#fff3ec}
+.gr.gone{display:none}
+.dlg{position:absolute;inset:0;background:rgba(30,30,28,.28);display:grid;place-items:center}
+.dbox{background:#fff;border-radius:9px;width:min(92%,330px);overflow:hidden;box-shadow:0 14px 30px -10px rgba(0,0,0,.35)}
+.dt{background:#2a2c30;color:#fff;font-weight:700;font-size:12px;padding:6px 10px}
+.db{padding:8px 10px;display:grid;gap:5px}
+.fr{display:grid;grid-template-columns:78px 1fr;gap:8px;align-items:center;font-size:11.5px;color:var(--ink2)}
+.fr>span:first-child{color:var(--mute)}
+.fr .two{display:flex;gap:6px;align-items:center}
+.df{display:flex;justify-content:flex-end;gap:6px;padding:6px 10px 9px}
+.lnrow{display:grid;grid-template-columns:44px 1fr 46px;gap:8px;align-items:center;font-size:11.5px;padding:5px 2px;border-bottom:1px solid var(--line);opacity:0;transform:translateX(-6px);transition:.3s}
+.lnrow.in{opacity:1;transform:none}
+.tg{font-size:10.5px;font-weight:700;border-radius:4px;padding:1px 6px;text-align:center;border:1px solid var(--line2)}
+.alert{position:absolute;inset:0;display:grid;place-items:center;background:rgba(30,30,28,.28);opacity:0;transition:.25s;pointer-events:none}
+.alert.on{opacity:1}
+.alert .dbox{width:200px}
+.alert .db{padding:16px 12px;text-align:center;font-size:13px;font-weight:600}
+
+/* log */
+.log{list-style:none;display:grid;gap:2px}
+.log li{display:grid;grid-template-columns:22px 1fr auto;gap:8px;align-items:center;padding:6px 2px;border-bottom:1px dashed var(--line);font-size:13.5px;color:var(--faint);transition:color .25s}
+.log li .o{width:18px;height:18px;border-radius:5px;border:1.5px solid var(--line2);display:grid;place-items:center;font-size:11px;color:#fff;transition:.25s}
+.log li time{font-family:var(--mono);font-size:11px;color:var(--faint);opacity:0;transition:.3s}
+.log li.run{color:var(--ink)}
+.log li.run .o{border-color:var(--accent);animation:blink 1s infinite}
+.log li.done{color:var(--ink)}
+.log li.done .o{background:var(--ok);border-color:var(--ok)}
+.log li.done .o::after{content:"✓"}
+.log li.done time{opacity:1}
+.rep{border:1px solid var(--line2);border-radius:14px;padding:12px 15px;font-size:14.5px;display:inline-block;margin-top:2px}
+.rep b{display:flex;align-items:center;gap:7px;margin-bottom:2px}
+.rep b::before{content:"✓";width:18px;height:18px;border-radius:50%;background:var(--ok);color:#fff;font-size:11px;display:grid;place-items:center}
+.rep span{color:var(--ink2);display:block}
+.rep em{font-style:normal;font-weight:700;color:var(--accent)}
+.learn{display:inline-block;margin-top:10px;border:1px solid var(--line2);border-radius:14px;padding:6px 14px;font-size:13px;color:var(--ink2)}
+.learn b{color:var(--ink)}
+.ctrl{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:16px;margin-top:6px;flex-wrap:wrap}
+.play{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;border-radius:99px;padding:9px 18px;font-weight:700;font-size:14px}
+.ctrl .hint{font-size:13.5px;color:var(--mute)}
+
+@media(max-width:640px){
+  .av{width:30px;height:30px}.msg{gap:10px}
+  .work{margin-left:-40px;padding:14px 12px}
+  .gr{grid-template-columns:50px 40px 1fr 44px;gap:4px;font-size:10.5px}
+  .nhead{gap:9px}.nhead .usr,.nhead .x{display:none}
+  .ntitle small{display:none}
+}
+/* placeholder */
+.ph{display:grid;place-items:center;text-align:center;min-height:420px;border:1.5px dashed var(--line2);border-radius:18px;padding:30px 20px}
+.ph .big{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-family:var(--mono);font-weight:600;color:#fff;margin:0 auto 14px}
+.ph h3{font-size:19px;letter-spacing:-.02em;line-height:1.4}
+.ph p{color:var(--mute);font-size:14px;margin-top:6px}
+
+/* picker + session info */
+.picker{display:flex;align-items:center;gap:8px;margin-top:18px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.picker::-webkit-scrollbar{display:none}
+.picker .lbl{font-family:var(--mono);font-size:12px;color:var(--mute);white-space:nowrap;margin-right:4px}
+.pick{white-space:nowrap;border:1px solid var(--line2);background:var(--card);border-radius:99px;padding:9px 16px;font-weight:700;font-size:14.5px;display:inline-flex;align-items:center;gap:8px}
+.pick i{width:8px;height:8px;border-radius:50%;background:var(--c)}
+.pick.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.sinfo{display:grid;grid-template-columns:1fr 1.1fr;gap:28px;margin-top:26px;padding:24px 4px 0;border-top:1px solid var(--line)}
+@media(max-width:760px){.sinfo{grid-template-columns:1fr;gap:14px}}
+.sinfo .tag{font-family:var(--mono);font-size:12px;color:var(--mute);display:flex;align-items:center;gap:7px}
+.sinfo .tag i{width:8px;height:8px;border-radius:50%;background:var(--c)}
+.sinfo h3{font-size:22px;letter-spacing:-.03em;line-height:1.35;margin:8px 0 6px}
+.sinfo .by{color:var(--mute);font-size:14px}
+.sinfo ol{list-style:none;display:grid;gap:2px}
+.sinfo li{display:grid;grid-template-columns:30px 1fr;gap:6px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.sinfo li .n{font-family:var(--mono);font-size:12px;color:var(--mute);padding-top:3px}
+.sinfo li .here{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--accent);margin-left:6px;white-space:nowrap}
+
+/* schedule */
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px}
+.sched{margin-top:30px;padding:6px 22px}
+.srow{display:grid;grid-template-columns:120px 1fr 1fr;gap:12px;padding:15px 0;border-bottom:1px solid var(--line);align-items:center;font-size:15px}
+.srow:last-child{border-bottom:0}
+.srow.h{font-family:var(--mono);font-size:12px;color:var(--mute);padding:12px 0}
+.srow time{font-family:var(--mono);font-size:13px;color:var(--ink2)}
+.srow time small{display:block;color:var(--mute);font-size:11px}
+.srow .all{grid-column:2/4;font-weight:700}
+.srow .rest{grid-column:2/4;color:var(--mute)}
+.pt{display:inline-flex;align-items:center;gap:6px;font-weight:700;margin-right:12px;white-space:nowrap}
+.pt i{width:8px;height:8px;border-radius:50%;background:var(--c)}
+@media(max-width:600px){.srow{grid-template-columns:86px 1fr 1fr;font-size:14px}.pt{display:flex;margin:2px 0}}
+.note{font-size:13.5px;color:var(--mute);margin-top:14px}
+
+/* prep */
+.prep{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px}
+@media(max-width:640px){.prep{grid-template-columns:1fr}}
+.prep .card{padding:22px}
+.prep .num{font-family:var(--mono);font-size:12px;color:var(--mute)}
+.prep b{display:block;font-size:18px;letter-spacing:-.02em;margin:6px 0 4px}
+.prep p{color:var(--ink2);font-size:14.5px}
 
 /* form */
-#apply{scroll-margin-top:16px}
-.form{padding:24px 20px}
-.q{padding:18px 0;border-bottom:1px solid var(--line)}
+#apply{scroll-margin-top:70px}
+.form{padding:28px 24px;margin-top:30px}
+@media(max-width:640px){.form{padding:22px 16px}}
+.q{padding:20px 0;border-bottom:1px solid var(--line)}
 .q:first-child{padding-top:0}
-.q:last-of-type{border-bottom:0}
-.q>label,.q>.lbl{display:block;font-weight:700;font-size:15.5px;margin-bottom:8px;letter-spacing:-.015em}
-.req{color:var(--red);margin-left:3px}
-.hint{font-size:13px;color:var(--sub);font-weight:500;margin:-4px 0 8px}
-input[type=text],input[type=tel],input[type=email],textarea{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:#fbfcfe;color:var(--ink);transition:border-color .15s}
-input:focus,textarea:focus{outline:none;border-color:var(--blue);background:#fff}
+.q>label,.q>.lbl{display:block;font-weight:700;font-size:16px;margin-bottom:9px;letter-spacing:-.015em}
+.req{color:var(--accent);margin-left:3px}
+.opt-s{color:var(--mute);font-weight:500;font-size:13px}
+.hint{font-size:13.5px;color:var(--mute);margin:-4px 0 9px}
+input[type=text],input[type=tel],input[type=email],textarea{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:1.5px solid var(--line2);border-radius:12px;background:#fcfcfa;color:var(--ink);transition:border-color .15s}
+input:focus,textarea:focus{outline:none;border-color:var(--ink);background:#fff}
 textarea{min-height:96px;resize:vertical}
 .opts{display:flex;flex-wrap:wrap;gap:8px}
 .opts.col{flex-direction:column}
 .opt{position:relative}
 .opt input{position:absolute;opacity:0;pointer-events:none}
-.opt span{display:flex;align-items:center;gap:8px;padding:10px 14px;border:1.5px solid var(--line);border-radius:12px;font-size:15px;cursor:pointer;background:#fbfcfe;transition:.12s;line-height:1.4}
-.opt span::before{content:"";flex:none;width:16px;height:16px;border:2px solid #b7bfd0;border-radius:50%;transition:.12s}
+.opt span{display:flex;align-items:center;gap:9px;padding:10px 15px;border:1.5px solid var(--line2);border-radius:12px;font-size:15px;cursor:pointer;background:#fcfcfa;transition:.12s;line-height:1.4}
+.opt span::before{content:"";flex:none;width:16px;height:16px;border:2px solid var(--line2);border-radius:50%;transition:.12s}
 .opt input[type=checkbox]+span::before{border-radius:5px}
-.opt input:checked+span{border-color:var(--blue);background:#eef2fd;color:var(--blue-d);font-weight:600}
-.opt input:checked+span::before{border-color:var(--blue);background:var(--blue);box-shadow:inset 0 0 0 3px #eef2fd}
-.opt input:focus-visible+span{outline:3px solid #b9c9f7}
-.opt small{color:var(--sub);font-weight:500}
-.err-msg{display:none;color:var(--red);font-size:13px;margin-top:6px;font-weight:600}
+.opt input:checked+span{border-color:var(--ink);background:var(--soft);font-weight:600}
+.opt input:checked+span::before{border-color:var(--ink);background:var(--ink);box-shadow:inset 0 0 0 3px var(--soft)}
+.opt input:focus-visible+span{outline:3px solid rgba(255,90,31,.35)}
+.err-msg{display:none;color:#c2410c;font-size:13px;margin-top:6px;font-weight:600}
 .q.invalid .err-msg{display:block}
-.q.invalid input[type=text],.q.invalid input[type=tel]{border-color:var(--red)}
-.privacy{background:#f7f8fb;border-radius:12px;padding:14px 16px;font-size:13.5px;color:#3a4460;margin-bottom:10px}
+.q.invalid input[type=text],.q.invalid input[type=tel]{border-color:#c2410c}
+.privacy{background:var(--soft);border-radius:12px;padding:14px 16px;font-size:13.5px;color:var(--ink2);margin-bottom:10px}
 .privacy dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px}
 .privacy dt{font-weight:700;white-space:nowrap}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-.submit{margin-top:22px}
-.submit .btn{width:100%;font-size:17px;padding:16px}
-.form-err{display:none;margin-top:12px;padding:12px 14px;border-radius:12px;background:#fdecea;color:#a62a1c;font-size:14px;font-weight:600}
-
-/* done */
-.done{display:none;text-align:center;padding:40px 22px}
-.done .check{width:64px;height:64px;border-radius:50%;background:var(--green);color:#fff;font-size:32px;display:grid;place-items:center;margin:0 auto 16px}
-.done h3{font-size:22px;letter-spacing:-.03em}
-.done .no{display:inline-block;margin:10px 0 18px;padding:4px 14px;border-radius:99px;background:#eef2fd;color:var(--blue-d);font-weight:700}
-.done ul{text-align:left;list-style:none;display:grid;gap:8px;max-width:420px;margin:0 auto}
-.done li{background:#f7f8fb;border-radius:12px;padding:12px 14px;font-size:14.5px}
-footer{text-align:center;color:var(--sub);font-size:13px;margin-top:40px}
-.spin{width:18px;height:18px;border:2.5px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:s .7s linear infinite;display:none}
+.submit{margin-top:24px}
+.submit .btn{width:100%;font-size:17px;padding:17px}
+.form-err{display:none;margin-top:12px;padding:12px 14px;border-radius:12px;background:#fff1ea;color:#9a3412;font-size:14px;font-weight:600}
+.donecard{display:none;text-align:center;padding:44px 22px;margin-top:30px}
+.donecard .check{width:60px;height:60px;border-radius:50%;background:var(--ok);color:#fff;font-size:28px;display:grid;place-items:center;margin:0 auto 16px}
+.donecard h3{font-size:24px;letter-spacing:-.03em}
+.donecard .no{display:inline-block;margin:10px 0 20px;padding:5px 14px;border-radius:99px;background:var(--soft);font-weight:700;font-family:var(--mono);font-size:13px}
+.donecard ul{text-align:left;list-style:none;display:grid;gap:8px;max-width:440px;margin:0 auto}
+.donecard li{border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14.5px}
+.spin{width:18px;height:18px;border:2.5px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;display:none}
 .sending .spin{display:inline-block}
-@keyframes s{to{transform:rotate(360deg)}}
+footer{text-align:center;color:var(--mute);font-size:13px;padding:60px 0 50px;font-family:var(--mono)}
 </style>
 </head>
 <body>
-<div class="stripe"><i></i><i></i><i></i><i></i></div>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><i></i>AI 체육수업 실천 연구회</div>
+    <nav><a href="#program">연수 내용</a><a href="#schedule">일정</a><a href="#prep">준비물</a></nav>
+    <a class="cta-s" href="#apply">신청하기</a>
+  </div>
+</header>
+
 <div class="wrap">
+  <section class="hero">
+    <div>
+      <span class="pill-note"><span class="dot"></span>신청 받는 중<span class="sep"></span><span class="mono">2026.11.27 FRI 15:00</span></span>
+      <h1>체육교사를 위한<br><span class="hl">AI 활용</span> <span class="g">사례 연수</span></h1>
+      <p class="lead">체육수업과 학교 업무에 AI를 써 본 실제 사례를 나누고, 직접 만들어 보는 실습으로 내 수업에 바로 쓸 결과물을 가져갑니다.</p>
+      <div class="cta">
+        <a class="btn btn-k" href="#apply">참가 신청 →</a>
+        <a class="btn btn-o" href="#program">무엇을 배우나요?</a>
+      </div>
+    </div>
+    <dl class="facts">
+      <div><dt>일시</dt><dd><b>11. 27.(금) 15:00~18:00</b><small>3시간</small></dd></div>
+      <div><dt>장소</dt><dd><b>대구일중학교</b><small>도서관 및 교실</small></dd></div>
+      <div><dt>대상</dt><dd><b>대구지역 체육교사</b><small>희망자 누구나</small></dd></div>
+      <div><dt>방식</dt><dd><b>스테이션 순환형</b><small>신청 규모에 따라 전체 순차형으로 변경 가능</small></dd></div>
+    </dl>
+  </section>
 
-  <header class="hero">
-    <div class="org">2026. AI 체육수업 실천 연구회</div>
-    <h1>체육교사 대상<br><em>AI 활용 사례 연수</em> 신청</h1>
-    <p class="lead">체육수업과 학교 업무에 AI를 써 본 실제 사례를 나누고, 직접 만들어 보는 실습으로 내 수업에 바로 쓸 결과물을 가져가는 연수입니다.</p>
-    <div class="facts">
-      <div class="fact"><b>일시</b><span>11. 27.(금)<small>15:00~18:00 (3시간)</small></span></div>
-      <div class="fact"><b>장소</b><span>대구일중학교<small>도서관 및 교실</small></span></div>
-      <div class="fact"><b>대상</b><span>대구 체육교사<small>희망자 누구나</small></span></div>
-    </div>
-    <div class="cta">
-      <a class="btn btn-p" href="#apply">신청하기 ↓</a>
-      <a class="btn btn-g" href="#program">연수 내용 보기</a>
-    </div>
-  </header>
+  <!-- ===== 01 program ===== -->
+  <section class="blk" id="program">
+    <div class="eyebrow">01 · 연수 내용</div>
+    <h2>이런 걸 배웁니다. <span class="g">세션을 골라 재생해 보세요.</span></h2>
+    <p class="sub">말로만 듣는 AI가 아니라, 실제로 일하는 장면을 보고 직접 만들어 봅니다.</p>
 
-  <section id="program">
-    <h2><span class="n">1</span>연수 내용</h2>
-    <div class="card opening">
-      <span class="tag" style="--c:#16213a">여는 마당 · 전체</span>
-      <h3>교사와 학생 사이 AI — 체육교사를 위한 에이전틱 AI 활용 사례</h3>
-      <div class="who">대진고등학교 유성욱</div>
-      <ol>
-        <li>AI 활용, 어디서부터 시작하면 될까?</li>
-        <li>AI를 활용한 NEIS 업무 간소화</li>
-        <li>상상하는 것들을 현실로</li>
-      </ol>
-    </div>
-    <div class="parts">
-      <div class="part" style="--c:var(--blue)">
-        <span class="tag">파트 1</span>
-        <h3>학생상담보다 쉬운 AI 대화</h3>
-        <div class="who">대구일중학교 이길봉</div>
-        <ol><li>AI 대화는 어떤 것인가?</li><li>강당에서 쓰는 간단한 타이머 만들기</li><li>내가 원하는 앱 만들기 대화법 나눔 및 실습</li></ol>
+    <div class="demo">
+      <div class="win">
+        <div class="win-bar"><i></i><i></i><i></i><span class="win-title" id="winTitle">#여는마당 · NEIS 복무 상신</span><span class="status" id="status"><b></b><span id="statusTxt">대기</span></span></div>
+
+        <!-- 여는 마당 demo -->
+        <div class="win-body" id="demo0">
+          <div class="msg hide" id="mMe">
+            <span class="av me">나</span>
+            <div class="grow"><div class="who">나 <span class="tool" style="border:0;padding:0;color:var(--mute)">쉬는 시간 · 10:00</span></div><div class="bubble" id="qText"></div></div>
+          </div>
+          <div class="msg hide" id="mAi">
+            <span class="av ai">AI</span>
+            <div class="grow">
+              <div class="who">AI 에이전트 <span class="tool">스킬 · NEIS 육아시간 상신</span></div>
+              <p class="say">알겠어요. 로그인부터 결재선 지정, 상신까지 진행할게요. 수업 다녀오세요.</p>
+              <div class="work">
+                <div class="wlbl">⌁ 계획</div>
+                <div class="plan" id="plan"></div>
+                <div class="work-grid">
+                  <div>
+                    <div class="wlbl">▣ 화면 · 교원업무포털</div>
+                    <div class="neis" id="neis">
+                      <div class="nbar"><i></i><i></i><i></i><span class="url">🔒 neis.go.kr</span></div>
+                      <!-- login -->
+                      <div class="scr on" data-s="login">
+                        <div class="login"><div class="lcard">
+                          <b>교원업무포털 로그인</b><small>인증서로 로그인하세요</small>
+                          <span class="nbtn p" id="nCert" style="text-align:center;padding:6px">공동인증서 로그인</span>
+                          <div class="row">비밀번호 <span class="inp" id="nPw"></span></div>
+                          <span class="nbtn" id="nOk" style="justify-self:end">확인</span>
+                        </div></div>
+                      </div>
+                      <!-- list -->
+                      <div class="scr" data-s="list">
+                        <div class="nhead"><b>교원업무포털</b><span>학적</span><span>성적</span><span class="on">복무</span><span class="x">급여</span><span class="usr">○○○ 선생님</span></div>
+                        <div class="ncont">
+                          <div class="ntitle"><b id="nMenu">개인근무상황관리</b><small>복무 › 개인근무상황관리</small><span class="nbtn p" id="nApply">신청</span></div>
+                          <div class="grid">
+                            <div class="gr h"><span>근무상황</span><span>기간</span><span>시간</span><span>상태</span></div>
+                            <div class="gr gone" id="nNew"><span>육아시간</span><span class="dTxt"></span><span>08:10~09:10</span><span class="ing">결재중</span></div>
+                            <div class="gr"><span>육아시간</span><span>11.04</span><span>08:10~09:10</span><span class="ok">결재완료</span></div>
+                            <div class="gr"><span>연가</span><span>10.24</span><span>종일</span><span class="ok">결재완료</span></div>
+                            <div class="gr"><span>육아시간</span><span>10.21</span><span>08:10~09:10</span><span class="ok">결재완료</span></div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- form -->
+                      <div class="scr" data-s="form">
+                        <div class="dlg"><div class="dbox">
+                          <div class="dt">근무상황 신청</div>
+                          <div class="db">
+                            <div class="fr"><span>대분류</span><span class="inp" id="f1">선택</span></div>
+                            <div class="fr"><span>소분류</span><span class="inp" id="f2">선택</span></div>
+                            <div class="fr"><span>기간</span><span class="inp" id="f3"></span></div>
+                            <div class="fr"><span>시간</span><span class="two"><span class="inp" id="f4"></span>~<span class="inp" id="f5"></span></span></div>
+                            <div class="fr"><span>자녀명</span><span class="inp" id="f6">선택</span></div>
+                            <div class="fr"><span>사유</span><span class="inp" id="f7"></span></div>
+                          </div>
+                          <div class="df"><span class="nbtn p" id="nReq">승인요청</span><span class="nbtn">닫기</span></div>
+                        </div></div>
+                      </div>
+                      <!-- line -->
+                      <div class="scr" data-s="line">
+                        <div class="dlg"><div class="dbox">
+                          <div class="dt">기안문서상신 · 결재자지정</div>
+                          <div class="db">
+                            <div class="lnrow" id="l1"><span class="tg">협조</span><span>김○○</span><span>부장</span></div>
+                            <div class="lnrow" id="l2"><span class="tg">검토</span><span>이○○</span><span>교감</span></div>
+                            <div class="lnrow" id="l3"><span class="tg">결재</span><span>박○○</span><span>교장</span></div>
+                          </div>
+                          <div class="df"><span class="nbtn">결재자지정</span><span class="nbtn p" id="nSub">상신</span></div>
+                        </div></div>
+                      </div>
+                      <div class="alert" id="nAlert"><div class="dbox"><div class="dt">알림</div><div class="db">상신되었습니다.</div></div></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="wlbl">≡ 작업 로그</div>
+                    <ul class="log" id="log"></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="msg hide" id="mDone">
+            <span class="av ai">AI</span>
+            <div class="grow">
+              <div class="who">AI 에이전트</div>
+              <div class="rep"><b>육아시간 상신 완료</b><span id="repDate"></span><span>결재선 협조 → 검토 → 결재 · 현재 <em>결재 대기</em></span></div><br>
+              <span class="learn">같은 방식으로 <b>출장 · 조퇴 · 초과근무</b>까지, 업무마다 스킬 하나</span>
+            </div>
+          </div>
+          <div class="msg hide" id="mThx" style="margin-bottom:8px">
+            <span class="av me">나</span>
+            <div class="grow"><div class="who">나 <span class="tool" style="border:0;padding:0;color:var(--mute)">수업 끝 · 10:50</span></div><div class="bubble">고마워! 👍</div></div>
+          </div>
+          <div class="ctrl">
+            <button class="play" id="playBtn">▶ 재생</button>
+            <span class="hint">쉬는 시간에 맡기고, 수업 다녀오면 끝.</span>
+          </div>
+        </div>
+
+        <!-- placeholder for other sessions -->
+        <div class="win-body" id="demoPh" hidden>
+          <div class="ph"><div>
+            <div class="big" id="phDot">P1</div>
+            <h3 id="phTitle"></h3>
+            <p>시연 화면을 준비하고 있어요. 곧 채워집니다.</p>
+          </div></div>
+        </div>
       </div>
-      <div class="part" style="--c:#d29a00">
-        <span class="tag">파트 2</span>
-        <h3>코딩 몰라도 OK! 우리 학교 체육대회 앱 만들기</h3>
-        <div class="who">동평중학교 임대관</div>
-        <ol><li>체육대회 운영 적용 사례(진행용)</li><li>체육대회 운영 적용 사례(집계용)</li><li>웹앱 응용 및 우리 학교 적용 방법 고민하기</li></ol>
-      </div>
-      <div class="part" style="--c:var(--green)">
-        <span class="tag">파트 3</span>
-        <h3>알.쓸.Ai — 알아두면 쓸데있는 신비한 AI 체육</h3>
-        <div class="who">포산고등학교 김보경</div>
-        <ol><li>PAPS 성적으로 모둠 구성하기 (실습, Claude·Google 필요)</li><li>스포츠 리듬 트레이닝 수업 사례 공유</li><li>AI 활용 사례와 데이터 확장성: 고민과 제언</li></ol>
-      </div>
-      <div class="part" style="--c:var(--red)">
-        <span class="tag">파트 4</span>
-        <h3>스마트한 체육수업의 시작 — iPad와 AI로 실현하는 IB 탐구학습</h3>
-        <div class="who">성명여자중학교 오재광</div>
-        <ol><li>몸으로 경험하고, 디지털로 기록하며, AI로 탐구하는 체육수업</li><li>교사 중심에서 학생 중심으로</li><li>일회성 평가에서 지속적 성장으로</li></ol>
-      </div>
+
+      <div class="picker" id="picker"><span class="lbl">세션을 골라 보세요</span></div>
+
+      <div class="sinfo" id="sinfo"></div>
     </div>
   </section>
 
-  <section>
-    <h2><span class="n">2</span>세부 일정</h2>
-    <div class="card" style="padding:8px 14px">
-      <table>
-        <thead><tr><th>시간</th><th>1조</th><th>2조</th></tr></thead>
-        <tbody>
-          <tr><td>15:00~15:15</td><td colspan="2" class="all">등록, 조 확인</td></tr>
-          <tr><td>15:15~15:40</td><td colspan="2" class="all">여는 마당 (유성욱)</td></tr>
-          <tr><td>15:40~15:50</td><td colspan="2" class="rest">휴식 및 이동</td></tr>
-          <tr><td>15:50~16:40<br>1회차</td>
-            <td><span class="chip" style="--c:var(--blue)">파트 1</span><span class="chip" style="--c:#d29a00">파트 2</span></td>
-            <td><span class="chip" style="--c:var(--green)">파트 3</span><span class="chip" style="--c:var(--red)">파트 4</span></td></tr>
-          <tr><td>16:40~16:50</td><td colspan="2" class="rest">휴식 및 이동</td></tr>
-          <tr><td>16:50~17:40<br>2회차</td>
-            <td><span class="chip" style="--c:var(--green)">파트 3</span><span class="chip" style="--c:var(--red)">파트 4</span></td>
-            <td><span class="chip" style="--c:var(--blue)">파트 1</span><span class="chip" style="--c:#d29a00">파트 2</span></td></tr>
-          <tr><td>17:40~18:00</td><td colspan="2" class="all">나눔 마당, 사후 설문, 마무리</td></tr>
-        </tbody>
-      </table>
+  <!-- ===== 02 schedule ===== -->
+  <section class="blk" id="schedule">
+    <div class="eyebrow">02 · 세부 일정</div>
+    <h2>세 시간, <span class="g">두 조로 나눠 스테이션을 돕니다.</span></h2>
+    <div class="card sched">
+      <div class="srow h"><span>시간</span><span>1조</span><span>2조</span></div>
+      <div class="srow"><time>15:00–15:15</time><span class="all">등록, 조 확인</span></div>
+      <div class="srow"><time>15:15–15:40</time><span class="all">여는 마당 <span style="color:var(--mute);font-weight:500">· 유성욱</span></span></div>
+      <div class="srow"><time>15:40–15:50</time><span class="rest">휴식 및 이동</span></div>
+      <div class="srow"><time>15:50–16:40<small>1회차</small></time>
+        <span><span class="pt" style="--c:var(--p1)"><i></i>파트 1</span><span class="pt" style="--c:var(--p2)"><i></i>파트 2</span></span>
+        <span><span class="pt" style="--c:var(--p3)"><i></i>파트 3</span><span class="pt" style="--c:var(--p4)"><i></i>파트 4</span></span></div>
+      <div class="srow"><time>16:40–16:50</time><span class="rest">휴식 및 이동</span></div>
+      <div class="srow"><time>16:50–17:40<small>2회차</small></time>
+        <span><span class="pt" style="--c:var(--p3)"><i></i>파트 3</span><span class="pt" style="--c:var(--p4)"><i></i>파트 4</span></span>
+        <span><span class="pt" style="--c:var(--p1)"><i></i>파트 1</span><span class="pt" style="--c:var(--p2)"><i></i>파트 2</span></span></div>
+      <div class="srow"><time>17:40–18:00</time><span class="all">나눔 마당, 사후 설문, 마무리</span></div>
     </div>
-    <p class="note">※ 1·2조로 나누어 스테이션 순환형으로 진행하며, 신청 규모에 따라 전체 순차형으로 바뀔 수 있습니다. 조는 당일 등록 때 안내합니다.</p>
+    <p class="note">※ 신청 규모에 따라 전체 순차형으로 바뀔 수 있습니다. 조는 당일 등록 때 안내합니다.</p>
   </section>
 
-  <section>
-    <h2><span class="n">3</span>참가자 준비물</h2>
+  <!-- ===== 03 prep ===== -->
+  <section class="blk" id="prep">
+    <div class="eyebrow">03 · 준비물</div>
+    <h2>두 가지만 챙겨 오세요.</h2>
     <div class="prep">
-      <div class="card"><div class="ico">💻</div><div><b>개인 노트북 (충전기 포함)</b><p>실습 위주로 진행되니 꼭 챙겨 주세요.</p></div></div>
-      <div class="card"><div class="ico">🔑</div><div><b>AI 서비스 계정 사전 가입</b><p>연수 전에 미리 가입해 두세요. 파트 3 실습은 Claude와 Google 계정이 필요합니다.</p></div></div>
+      <div class="card"><span class="num">01</span><b>개인 노트북 (충전기 포함)</b><p>실습 위주로 진행되니 꼭 가져와 주세요.</p></div>
+      <div class="card"><span class="num">02</span><b>AI 서비스 계정 사전 가입</b><p>연수 전에 미리 가입해 두세요. 파트 3 실습은 Claude와 Google 계정이 필요합니다.</p></div>
     </div>
   </section>
 
-  <section id="apply">
-    <h2><span class="n">4</span>참가 신청</h2>
+  <!-- ===== 04 apply ===== -->
+  <section class="blk narrow" id="apply">
+    <div class="eyebrow">04 · 참가 신청</div>
+    <h2>참가 신청 <span class="g">1분이면 끝납니다.</span></h2>
     <div class="card form" id="formCard">
       <form id="f" novalidate>
         <div class="q" data-req="text">
@@ -238,8 +489,8 @@ footer{text-align:center;color:var(--sub);font-size:13px;margin-top:40px}
           <div class="err-msg">휴대전화 번호를 정확히 입력해 주세요.</div>
         </div>
         <div class="q" data-req="email">
-          <label for="email">이메일</label>
-          <p class="hint">연수 자료를 받을 주소 (선택)</p>
+          <label for="email">이메일 <span class="opt-s">(선택)</span></label>
+          <p class="hint">연수 자료를 받을 주소</p>
           <input type="email" id="email" name="email" autocomplete="email" maxlength="80">
           <div class="err-msg">이메일 형식을 확인해 주세요.</div>
         </div>
@@ -254,7 +505,7 @@ footer{text-align:center;color:var(--sub);font-size:13px;margin-top:40px}
           <div class="err-msg">하나를 선택해 주세요.</div>
         </div>
         <div class="q">
-          <div class="lbl">써 본 AI 서비스 <small style="color:var(--sub);font-weight:500">(복수 선택)</small></div>
+          <div class="lbl">써 본 AI 서비스 <span class="opt-s">(복수 선택)</span></div>
           <div class="opts">
             <label class="opt"><input type="checkbox" name="aiTools" value="ChatGPT"><span>ChatGPT</span></label>
             <label class="opt"><input type="checkbox" name="aiTools" value="Claude"><span>Claude</span></label>
@@ -265,7 +516,7 @@ footer{text-align:center;color:var(--sub);font-size:13px;margin-top:40px}
           </div>
         </div>
         <div class="q">
-          <div class="lbl">특히 관심 있는 파트 <small style="color:var(--sub);font-weight:500">(복수 선택)</small></div>
+          <div class="lbl">특히 관심 있는 파트 <span class="opt-s">(복수 선택)</span></div>
           <p class="hint">조 편성과 강의 준비에 참고합니다.</p>
           <div class="opts col">
             <label class="opt"><input type="checkbox" name="parts" value="파트1 AI 대화·앱 만들기"><span>파트 1 · AI 대화로 앱 만들기</span></label>
@@ -286,7 +537,7 @@ footer{text-align:center;color:var(--sub);font-size:13px;margin-top:40px}
           <label for="memo">연수에 바라는 점·미리 묻고 싶은 것</label>
           <textarea id="memo" name="memo" maxlength="800" placeholder="예: 수행평가 기록을 AI로 정리하는 방법이 궁금해요."></textarea>
         </div>
-        <div class="q" data-req="agree">
+        <div class="q" data-req="agree" style="border-bottom:0">
           <div class="lbl">개인정보 수집·이용 동의<span class="req">*</span></div>
           <div class="privacy">
             <dl>
@@ -300,46 +551,219 @@ footer{text-align:center;color:var(--sub);font-size:13px;margin-top:40px}
           <div class="err-msg">개인정보 수집·이용에 동의해 주세요.</div>
         </div>
         <div class="hp" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
-        <div class="submit"><button class="btn btn-p" id="sendBtn" type="submit"><span class="spin"></span><span id="sendTxt">신청서 제출</span></button></div>
+        <div class="submit"><button class="btn btn-k" id="sendBtn" type="submit"><span class="spin"></span><span id="sendTxt">신청서 제출</span></button></div>
         <div class="form-err" id="formErr"></div>
       </form>
     </div>
-    <div class="card done" id="done">
+    <div class="card donecard" id="done">
       <div class="check">✓</div>
       <h3>신청이 접수되었습니다</h3>
       <div class="no" id="doneNo"></div>
       <ul>
-        <li>📅 <b>11. 27.(금) 15:00</b> 대구일중학교 도서관에서 등록 후 조를 확인합니다.</li>
-        <li>💻 개인 노트북과 충전기를 챙겨 주세요.</li>
-        <li>🔑 연수 전 AI 서비스(Claude·Google 등) 계정 가입을 마쳐 주세요.</li>
+        <li><b>11. 27.(금) 15:00</b> 대구일중학교 도서관에서 등록 후 조를 확인합니다.</li>
+        <li>개인 노트북과 충전기를 챙겨 주세요.</li>
+        <li>연수 전 AI 서비스(Claude·Google 등) 계정 가입을 마쳐 주세요.</li>
       </ul>
     </div>
   </section>
-
-  <footer>2026. AI 체육수업 실천 연구회</footer>
 </div>
+<footer>2026. AI 체육수업 실천 연구회</footer>
 
 <script>
+/* ================= 연수 내용: 세션 선택 + 시연 ================= */
+const SESSIONS = [
+  { key:'여는 마당', c:'var(--p0)', tag:'여는 마당 · 전체', win:'#여는마당 · NEIS 복무 상신',
+    title:'교사와 학생 사이 AI — 체육교사를 위한 에이전틱 AI 활용 사례', by:'대진고등학교 유성욱',
+    topics:['AI 활용, 어디서부터 시작하면 될까?','AI를 활용한 NEIS 업무 간소화','상상하는 것들을 현실로'], demoAt:1 },
+  { key:'파트 1', c:'var(--p1)', tag:'파트 1', win:'#파트1 · 준비 중',
+    title:'학생상담보다 쉬운 AI 대화', by:'대구일중학교 이길봉',
+    topics:['AI 대화는 어떤 것인가?','강당에서 쓰는 간단한 타이머 만들기','내가 원하는 앱 만들기 대화법 나눔 및 실습'] },
+  { key:'파트 2', c:'var(--p2)', tag:'파트 2', win:'#파트2 · 준비 중',
+    title:'코딩 몰라도 OK! 우리 학교 체육대회 앱 만들기', by:'동평중학교 임대관',
+    topics:['체육대회 운영 적용 사례 보기 (진행용)','체육대회 운영 적용 사례 보기 (집계용)','체육대회 웹앱 응용 및 우리 학교 적용 방법 고민하기'] },
+  { key:'파트 3', c:'var(--p3)', tag:'파트 3', win:'#파트3 · 준비 중',
+    title:'알.쓸.Ai — 알아두면 쓸데있는 신비한 AI 체육', by:'포산고등학교 김보경',
+    topics:['PAPS 성적을 활용하여 모둠 구성하기 (실습, Claude·Google 필요)','스포츠 리듬 트레이닝 수업 (사례 공유)','AI 활용 사례와 데이터 확장성 (고민과 제언)'] },
+  { key:'파트 4', c:'var(--p4)', tag:'파트 4', win:'#파트4 · 준비 중',
+    title:'스마트한 체육수업의 시작 — iPad와 AI로 실현하는 IB 탐구학습', by:'성명여자중학교 오재광',
+    topics:['몸으로 경험하고, 디지털로 기록하며, AI로 탐구하는 체육수업','교사 중심에서 학생 중심으로: 스스로 발견하고 해결하는 수업','일회성 평가에서 지속적 성장으로: 목표·실행·피드백·성찰'] }
+];
+const $id = id => document.getElementById(id);
+const picker = $id('picker'), sinfo = $id('sinfo');
+let current = 0;
+
+SESSIONS.forEach((s, i) => {
+  const b = document.createElement('button');
+  b.className = 'pick' + (i === 0 ? ' on' : '');
+  b.style.setProperty('--c', s.c);
+  b.innerHTML = `<i></i>${s.key}`;
+  b.addEventListener('click', () => selectSession(i));
+  picker.appendChild(b);
+});
+
+function renderInfo(i) {
+  const s = SESSIONS[i];
+  sinfo.innerHTML = `<div><div class="tag" style="--c:${s.c}"><i></i>${s.tag}</div><h3>${s.title}</h3><div class="by">${s.by}</div></div>
+    <ol>${s.topics.map((t, k) => `<li><span class="n">0${k+1}</span><span>${t}${s.demoAt === k ? '<span class="here">▲ 위 시연</span>' : ''}</span></li>`).join('')}</ol>`;
+}
+
+function selectSession(i) {
+  current = i;
+  [...picker.querySelectorAll('.pick')].forEach((b, k) => b.classList.toggle('on', k === i));
+  $id('winTitle').textContent = SESSIONS[i].win;
+  renderInfo(i);
+  stop();
+  if (i === 0) {
+    $id('demo0').hidden = false; $id('demoPh').hidden = true;
+    play();
+  } else {
+    $id('demo0').hidden = true; $id('demoPh').hidden = false;
+    const d = $id('phDot'); d.textContent = 'P' + i; d.style.background = SESSIONS[i].c;
+    $id('phTitle').textContent = SESSIONS[i].title;
+    setStatus('', '준비 중');
+  }
+}
+
+/* ---- NEIS demo ---- */
+const tmr = new Date(Date.now() + 864e5);
+const pad = n => String(n).padStart(2, '0');
+const DAY = '일월화수목금토'[tmr.getDay()];
+const D_SHORT = `${pad(tmr.getMonth()+1)}.${pad(tmr.getDate())}`;
+const D_FULL = `${tmr.getFullYear()}.${D_SHORT}`;
+document.querySelectorAll('.dTxt').forEach(e => e.textContent = D_SHORT);
+$id('repDate').textContent = `${tmr.getMonth()+1}.${tmr.getDate()}(${DAY}) 08:10~09:10`;
+
+const PLAN = ['로그인', '메뉴 이동', '육아시간 선택', '날짜·시간 입력', '결재선 지정', '상신'];
+const LOG = ['인증서 로그인', '복무 › 개인근무상황관리', '특별휴가 › 육아시간', `${D_SHORT} 08:10~09:10`, '자녀명 · 사유 입력', '결재선 협조·검토·결재', '상신'];
+const LOG_T = ['10:01', '10:01', '10:02', '10:02', '10:02', '10:03', '10:04'];
+$id('plan').innerHTML = PLAN.map(p => `<span class="chip"><span class="ck"></span>${p}</span>`).join('');
+$id('log').innerHTML = LOG.map((l, k) => `<li><span class="o"></span><span>${l}</span><time>${LOG_T[k]}</time></li>`).join('');
+const chips = [...document.querySelectorAll('#plan .chip')];
+const logs = [...document.querySelectorAll('#log li')];
+const Q = '내일 08:10~09:10 육아시간 나이스에 상신해 줘';
+
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+let runId = 0, played = false;
+const sleep = (ms, id) => new Promise((res, rej) => setTimeout(() => id === runId ? res() : rej('stop'), reduce ? 0 : ms));
+async function typeIn(el, txt, sp, id) { el.textContent = ''; for (const ch of txt) { el.textContent += ch; await sleep(sp, id); } }
+
+function setStatus(cls, txt) { const s = $id('status'); s.className = 'status ' + cls; $id('statusTxt').textContent = txt; }
+function screen(name) { document.querySelectorAll('#neis .scr').forEach(s => s.classList.toggle('on', s.dataset.s === name)); }
+function act(el) { document.querySelectorAll('#neis .act').forEach(e => e.classList.remove('act')); if (el) el.classList.add('act'); }
+const setChip = (i, st) => chips[i].className = 'chip ' + st;
+const setLog = (i, st) => logs[i].className = st;
+const show = (id, on) => $id(id).classList.toggle('hide', !on);
+
+function reset() {
+  ['mMe', 'mAi', 'mDone', 'mThx'].forEach(id => show(id, false));
+  $id('qText').textContent = '';
+  chips.forEach((c, i) => setChip(i, '')); logs.forEach((l, i) => setLog(i, ''));
+  screen('login'); act(null);
+  $id('nPw').textContent = '';
+  $id('f1').textContent = '선택'; $id('f2').textContent = '선택'; $id('f6').textContent = '선택';
+  ['f3', 'f4', 'f5', 'f7'].forEach(f => $id(f).textContent = '');
+  ['l1', 'l2', 'l3'].forEach(l => $id(l).classList.remove('in'));
+  $id('nNew').classList.add('gone'); $id('nNew').classList.remove('new');
+  $id('nAlert').classList.remove('on');
+  setStatus('', '대기');
+  $id('playBtn').textContent = '▶ 재생';
+}
+
+function stop() { runId++; }
+
+async function play() {
+  const id = ++runId; played = true;
+  reset();
+  $id('playBtn').textContent = '■ 재생 중';
+  try {
+    setStatus('run', '진행 중');
+    show('mMe', true); await sleep(300, id);
+    const q = $id('qText');
+    q.innerHTML = '<span class="caret"></span>';
+    for (const ch of Q) { q.innerHTML = q.textContent + ch + '<span class="caret"></span>'; await sleep(45, id); }
+    q.textContent = Q;
+    await sleep(500, id);
+    show('mAi', true); await sleep(700, id);
+
+    // 1 로그인
+    setChip(0, 'run'); setLog(0, 'run'); screen('login');
+    act($id('nCert')); await sleep(800, id);
+    act($id('nPw')); await typeIn($id('nPw'), '●●●●●●●●●', 70, id);
+    act($id('nOk')); await sleep(500, id);
+    setChip(0, 'done'); setLog(0, 'done');
+
+    // 2 메뉴 이동
+    setChip(1, 'run'); setLog(1, 'run'); screen('list'); act($id('nMenu'));
+    await sleep(900, id);
+    act($id('nApply')); await sleep(600, id);
+    setChip(1, 'done'); setLog(1, 'done');
+
+    // 3 육아시간 선택
+    setChip(2, 'run'); setLog(2, 'run'); screen('form');
+    act($id('f1')); await sleep(450, id); $id('f1').textContent = '특별휴가'; await sleep(350, id);
+    act($id('f2')); await sleep(450, id); $id('f2').textContent = '육아시간'; await sleep(350, id);
+    setChip(2, 'done'); setLog(2, 'done');
+
+    // 4 날짜·시간, 자녀명·사유
+    setChip(3, 'run'); setLog(3, 'run');
+    act($id('f3')); await typeIn($id('f3'), D_FULL, 55, id);
+    act($id('f4')); await typeIn($id('f4'), '08:10', 70, id);
+    act($id('f5')); await typeIn($id('f5'), '09:10', 70, id);
+    setLog(3, 'done'); setLog(4, 'run');
+    act($id('f6')); await sleep(400, id); $id('f6').textContent = '○○○';
+    act($id('f7')); await typeIn($id('f7'), '자녀 등원', 80, id);
+    act($id('nReq')); await sleep(600, id);
+    setChip(3, 'done'); setLog(4, 'done');
+
+    // 5 결재선
+    setChip(4, 'run'); setLog(5, 'run'); screen('line'); act(null);
+    for (const l of ['l1', 'l2', 'l3']) { await sleep(500, id); $id(l).classList.add('in'); }
+    await sleep(400, id);
+    setChip(4, 'done'); setLog(5, 'done');
+
+    // 6 상신
+    setChip(5, 'run'); setLog(6, 'run'); act($id('nSub')); await sleep(700, id);
+    act(null); $id('nAlert').classList.add('on'); await sleep(1100, id);
+    $id('nAlert').classList.remove('on'); screen('list');
+    $id('nNew').classList.remove('gone'); $id('nNew').classList.add('new');
+    await sleep(500, id);
+    setChip(5, 'done'); setLog(6, 'done');
+
+    await sleep(500, id);
+    show('mDone', true); await sleep(1300, id);
+    show('mThx', true);
+    setStatus('done', '완료');
+    $id('playBtn').textContent = '↺ 다시 보기';
+  } catch (e) { /* stopped */ }
+}
+
+$id('playBtn').addEventListener('click', () => {
+  if ($id('status').classList.contains('run')) { stop(); reset(); } else play();
+});
+renderInfo(0); reset();
+new IntersectionObserver((ents, ob) => {
+  ents.forEach(e => { if (e.isIntersecting && !played && current === 0) { play(); ob.disconnect(); } });
+}, { rootMargin: '0px 0px -40% 0px' }).observe(document.querySelector('.win'));
+
+/* ================= 신청서 ================= */
 const ENDPOINT = 'https://script.google.com/macros/s/AKfycbxwdHdBozA3c3mXteVwLZ79Clw1XpN-gIJuVTM93kDy2N6CzoJqQiH_f0-2iol1RFvj/exec';
 const TOKEN = 'peai-1127';
-const f = document.getElementById('f');
+const f = $id('f');
 const $ = s => f.querySelector(s);
-const phoneEl = document.getElementById('phone');
+const phoneEl = $id('phone');
 
 phoneEl.addEventListener('input', () => {
   const d = phoneEl.value.replace(/\D/g, '').slice(0, 11);
   phoneEl.value = d.length < 4 ? d : d.length < 8 ? d.slice(0,3)+'-'+d.slice(3)
     : d.length < 11 ? d.slice(0,3)+'-'+d.slice(3,6)+'-'+d.slice(6) : d.slice(0,3)+'-'+d.slice(3,7)+'-'+d.slice(7);
 });
-// '없음'과 다른 선택지는 함께 고르지 않게
 f.querySelectorAll('input[name=aiTools]').forEach(c => c.addEventListener('change', () => {
   if (!c.checked) return;
   f.querySelectorAll('input[name=aiTools]').forEach(o => {
     if (o !== c && (c.value === '없음' || o.value === '없음')) o.checked = false;
   });
 }));
-f.addEventListener('input', e => { const q = e.target.closest('.q'); if (q) q.classList.remove('invalid'); });
-f.addEventListener('change', e => { const q = e.target.closest('.q'); if (q) q.classList.remove('invalid'); });
+['input', 'change'].forEach(ev => f.addEventListener(ev, e => { const q = e.target.closest('.q'); if (q) q.classList.remove('invalid'); }));
 
 function valid(q) {
   const t = q.dataset.req;
@@ -354,7 +778,7 @@ const vals = n => [...f.querySelectorAll(`input[name=${n}]:checked`)].map(i => i
 
 f.addEventListener('submit', async e => {
   e.preventDefault();
-  const errBox = document.getElementById('formErr');
+  const errBox = $id('formErr');
   errBox.style.display = 'none';
   let first = null;
   f.querySelectorAll('.q[data-req]').forEach(q => {
@@ -371,16 +795,16 @@ f.addEventListener('submit', async e => {
     laptop: vals('laptop')[0], memo: $('#memo').value.trim(),
     agree: $('#agree').checked, website: $('input[name=website]').value
   };
-  const btn = document.getElementById('sendBtn');
+  const btn = $id('sendBtn');
   btn.disabled = true; btn.classList.add('sending');
-  document.getElementById('sendTxt').textContent = '제출 중…';
+  $id('sendTxt').textContent = '제출 중…';
   try {
     const res = await fetch(ENDPOINT, { method: 'POST', body: JSON.stringify(data) });
     const r = await res.json();
     if (r.ok) {
-      document.getElementById('formCard').style.display = 'none';
-      const done = document.getElementById('done');
-      document.getElementById('doneNo').textContent = `${data.name} 선생님 · 접수번호 ${r.no}`;
+      $id('formCard').style.display = 'none';
+      const done = $id('done');
+      $id('doneNo').textContent = `${data.name} 선생님 · 접수번호 ${r.no}`;
       done.style.display = 'block';
       done.scrollIntoView({ behavior: 'smooth', block: 'start' });
       return;
@@ -391,7 +815,7 @@ f.addEventListener('submit', async e => {
   }
   errBox.style.display = 'block';
   btn.disabled = false; btn.classList.remove('sending');
-  document.getElementById('sendTxt').textContent = '신청서 제출';
+  $id('sendTxt').textContent = '신청서 제출';
 });
 </script>
 </body>
