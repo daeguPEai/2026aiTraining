@@ -85,7 +85,7 @@ h2 .g{color:#5f5f58}
 .msg{max-height:1600px;overflow:hidden}
 .msg.hide{opacity:0;transform:translateY(6px);max-height:0;margin-bottom:0}
 .av{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:800}
-.av.me{background:var(--ink);color:#fff}
+.av.me{background:var(--ink);color:#fff;font-size:11px}
 .av.ai{background:var(--accent);color:#fff;font-family:var(--mono);font-size:11px}
 .who{font-size:13.5px;font-weight:700;margin-bottom:5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .tool{font-family:var(--mono);font-size:11.5px;font-weight:600;color:var(--ink2);border:1px solid var(--line2);border-radius:7px;padding:1px 7px}
@@ -183,6 +183,56 @@ h2 .g{color:#5f5f58}
   .nhead{gap:9px}.nhead .usr,.nhead .x{display:none}
   .ntitle small{display:none}
 }
+
+/* ---- shared demo screen ---- */
+.screen{position:relative;height:300px;border:1px solid var(--line2);border-radius:12px;overflow:hidden;background:#fafaf8}
+.meta{font-family:var(--mono);font-size:11.5px;font-weight:600;color:var(--mute)}
+.att{display:inline-flex;align-items:center;gap:6px;margin:6px 0 0 6px;border:1px solid var(--line2);background:var(--card);border-radius:9px;padding:4px 10px;font-size:12.5px;font-weight:600;color:var(--ink2);vertical-align:bottom}
+.rep .rq{margin-top:6px;padding-top:6px;border-top:1px dashed var(--line2);color:var(--ink)}
+.toast{position:absolute;left:50%;bottom:10px;transform:translate(-50%,10px);background:var(--ink);color:#fff;font-size:12px;font-weight:600;border-radius:8px;padding:6px 12px;white-space:nowrap;opacity:0;transition:.35s}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* ---- PAPS 모둠 ---- */
+.paps .pt-title{position:absolute;left:12px;top:10px;font-size:12.5px;font-weight:700;transition:opacity .3s}
+.paps .pt-title span{font-family:var(--mono);font-size:10.5px;color:var(--mute);font-weight:600;margin-left:4px}
+.paps .tm{position:absolute;width:48%;height:47%;border:1.5px dashed var(--line2);border-radius:12px;opacity:0;transition:opacity .4s}
+.paps .tm b{position:absolute;left:10px;top:6px;font-size:12px}
+.paps .tm em{position:absolute;right:9px;top:6px;font-style:normal;font-family:var(--mono);font-size:10.5px;font-weight:600;color:#fff;background:var(--ok);border-radius:5px;padding:1px 6px;opacity:0;transition:opacity .3s}
+.paps.teams .tm{opacity:1}.paps.teams .pt-title{opacity:0}.paps.avg .tm em{opacity:1}
+.paps .st{position:absolute;width:22%;height:14%;border:1.5px solid var(--ink);border-radius:9px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 5px 0 8px;font-weight:700;font-size:12.5px;opacity:0;
+  transition:left .6s cubic-bezier(.3,1.2,.4,1),top .6s cubic-bezier(.3,1.2,.4,1),transform .6s,opacity .25s}
+.paps .st.in{opacity:1}
+.paps .st i{font-style:normal;width:20px;height:20px;border-radius:50%;background:var(--line2);color:#fff;display:grid;place-items:center;font-size:11px;font-family:var(--mono);transition:background .2s}
+.paps .st.g i{background:var(--ink)}
+.paps .st.lo i{background:var(--accent)}
+
+/* ---- 동작 탐구 ---- */
+.pose .pbadge{position:absolute;left:10px;top:9px;font-size:12px;font-weight:700;background:#fff;border:1px solid var(--line2);border-radius:7px;padding:2px 8px;z-index:2}
+.pose .pbadge.rec{color:var(--accent)}
+.pose .floor{position:absolute;left:0;right:0;bottom:7%;height:2px;background:var(--ink)}
+.pose svg{position:absolute;left:3%;bottom:7%;width:44%;max-height:86%}
+.fig{animation:bob .5s ease-in-out infinite alternate;transform-origin:300px 620px}
+@keyframes bob{from{transform:translateY(18px) scaleY(.95)}to{transform:translateY(-12px)}}
+.frz .fig{animation-play-state:paused}
+.sk line{stroke:var(--accent);stroke-width:7;stroke-linecap:round;stroke-dasharray:300;stroke-dashoffset:300;transition:stroke-dashoffset .6s}
+.sk circle{fill:var(--accent);stroke:#fff;stroke-width:4;opacity:0;transition:opacity .3s .3s}
+.skon .sk line{stroke-dashoffset:0}.skon .sk circle{opacity:1}
+.pose .side{position:absolute;left:50%;right:4%;top:16%;bottom:10%;display:grid;align-content:center;gap:8px}
+.pose .plab{border:1.5px solid var(--ink);border-radius:9px;background:#fff;padding:6px 10px;font-size:13px;font-weight:600;display:flex;justify-content:space-between;opacity:0;transform:translateX(8px);transition:.35s}
+.pose .plab b{color:var(--accent);font-family:var(--mono)}
+.pose .plab.in{opacity:1;transform:none}
+.pose .cmp{position:absolute;left:50%;right:4%;top:50%;transform:translateY(-46%);background:#fff;border:1px solid var(--line2);border-radius:10px;overflow:hidden;opacity:0;transition:.4s;font-size:12px}
+.pose .cmp.in{opacity:1;transform:translateY(-50%)}
+.pose .cmp div{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;padding:7px 9px;border-bottom:1px solid var(--line);align-items:center;opacity:0;transition:.3s}
+.pose .cmp div.in{opacity:1}
+.pose .cmp div:last-child{border-bottom:0}
+.pose .cmp .ch{background:var(--soft);font-weight:700;font-size:11px;opacity:1}
+.pose .cmp b{font-family:var(--mono);font-size:12px}
+.pose .cmp .hi{background:#fff3ec}
+.pose .cmp .hi b:nth-child(2){color:var(--accent)}
+.pose.cmpmode .side{opacity:0;transition:opacity .3s}
+@media(max-width:640px){.pose svg{width:40%}.pose .cmp,.pose .side{left:43%;right:3%}.pose .plab{font-size:11.5px;padding:5px 7px}.pose .cmp{font-size:11px}.pose .cmp div{padding:6px}}
+
 /* placeholder */
 .ph{display:grid;place-items:center;text-align:center;min-height:420px;border:1.5px dashed var(--line2);border-radius:18px;padding:30px 20px}
 .ph .big{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-family:var(--mono);font-weight:600;color:#fff;margin:0 auto 14px}
@@ -321,19 +371,19 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:60px 0 50px;fo
         <div class="win-bar"><i></i><i></i><i></i><span class="win-title" id="winTitle">#여는마당 · NEIS 복무 상신</span><span class="status" id="status"><b></b><span id="statusTxt">대기</span></span></div>
 
         <!-- 여는 마당 demo -->
-        <div class="win-body" id="demo0">
-          <div class="msg hide" id="mMe">
+        <div class="win-body demo" id="demo0">
+          <div class="msg hide" data-m="me">
             <span class="av me">나</span>
-            <div class="grow"><div class="who">나 <span class="tool" style="border:0;padding:0;color:var(--mute)">쉬는 시간 · 10:00</span></div><div class="bubble" id="qText"></div></div>
+            <div class="grow"><div class="who">나 <span class="tool" style="border:0;padding:0;color:var(--mute)">쉬는 시간 · 10:00</span></div><div class="bubble qtext"></div></div>
           </div>
-          <div class="msg hide" id="mAi">
+          <div class="msg hide" data-m="ai">
             <span class="av ai">AI</span>
             <div class="grow">
               <div class="who">AI 에이전트 <span class="tool">스킬 · NEIS 육아시간 상신</span></div>
               <p class="say">알겠어요. 로그인부터 결재선 지정, 상신까지 진행할게요. 수업 다녀오세요.</p>
               <div class="work">
                 <div class="wlbl">⌁ 계획</div>
-                <div class="plan" id="plan"></div>
+                <div class="plan"></div>
                 <div class="work-grid">
                   <div>
                     <div class="wlbl">▣ 화면 · 교원업무포털</div>
@@ -394,13 +444,13 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:60px 0 50px;fo
                   </div>
                   <div>
                     <div class="wlbl">≡ 작업 로그</div>
-                    <ul class="log" id="log"></ul>
+                    <ul class="log"></ul>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="msg hide" id="mDone">
+          <div class="msg hide" data-m="done">
             <span class="av ai">AI</span>
             <div class="grow">
               <div class="who">AI 에이전트</div>
@@ -408,16 +458,89 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:60px 0 50px;fo
               <span class="learn">같은 방식으로 <b>출장 · 조퇴 · 초과근무</b>까지, 업무마다 스킬 하나</span>
             </div>
           </div>
-          <div class="msg hide" id="mThx" style="margin-bottom:8px">
+          <div class="msg hide" data-m="thx" style="margin-bottom:8px">
             <span class="av me">나</span>
             <div class="grow"><div class="who">나 <span class="tool" style="border:0;padding:0;color:var(--mute)">수업 끝 · 10:50</span></div><div class="bubble">고마워! 👍</div></div>
           </div>
           <div class="ctrl">
-            <button class="play" id="playBtn">▶ 재생</button>
+            <button class="play">▶ 재생</button>
             <span class="hint">쉬는 시간에 맡기고, 수업 다녀오면 끝.</span>
           </div>
         </div>
 
+
+        <div class="win-body demo" id="demo3" hidden>
+          <div class="msg hide" data-m="me">
+            <span class="av me">나</span>
+            <div class="grow"><div class="who">나 <span class="meta">1교시 전 · 08:40</span></div><div class="bubble qtext"></div><span class="att">📎 2학년3반_PAPS.xlsx</span></div>
+          </div>
+          <div class="msg hide" data-m="ai">
+            <span class="av ai">AI</span>
+            <div class="grow">
+              <div class="who">AI 에이전트 <span class="tool">도구 · Claude + 구글 시트</span></div>
+              <p class="say">체력요인별 등급을 종합해서, 모둠마다 평균 등급이 같아지도록 나눌게요.</p>
+              <div class="work">
+                <div class="wlbl">⌁ 계획</div>
+                <div class="plan"></div>
+                <div class="work-grid">
+                  <div><div class="wlbl">▣ 화면 · 모둠 편성 <span style="color:var(--faint)">(예시)</span></div><div class="screen paps" id="paps"><div class="pt-title">2학년 3반 · PAPS 종합 등급<span>가상 명단</span></div><div class="tm" style="left:1%;top:1.5%"><b>A 모둠</b><em>평균 3.0</em></div><div class="tm" style="left:51%;top:1.5%"><b>B 모둠</b><em>평균 3.0</em></div><div class="tm" style="left:1%;top:51.5%"><b>C 모둠</b><em>평균 3.0</em></div><div class="tm" style="left:51%;top:51.5%"><b>D 모둠</b><em>평균 3.0</em></div><div class="st" data-g="3" data-t="0">서준<i>?</i></div><div class="st" data-g="5" data-t="2">하윤<i>?</i></div><div class="st" data-g="2" data-t="3">도현<i>?</i></div><div class="st" data-g="4" data-t="1">지우<i>?</i></div><div class="st" data-g="1" data-t="0">민재<i>?</i></div><div class="st" data-g="2" data-t="2">서연<i>?</i></div><div class="st" data-g="4" data-t="0">예준<i>?</i></div><div class="st" data-g="3" data-t="3">수아<i>?</i></div><div class="st" data-g="5" data-t="3">시우<i>?</i></div><div class="st" data-g="1" data-t="1">지안<i>?</i></div><div class="st" data-g="3" data-t="1">건우<i>?</i></div><div class="st" data-g="2" data-t="2">채원<i>?</i></div><div class="st" data-g="4" data-t="1">유준<i>?</i></div><div class="st" data-g="2" data-t="3">다은<i>?</i></div><div class="st" data-g="4" data-t="0">현우<i>?</i></div><div class="st" data-g="3" data-t="2">소율<i>?</i></div><div class="toast" id="papsToast">✓ 구글 시트 ‘모둠편성’ 탭에 저장됨</div></div></div>
+                  <div><div class="wlbl">≡ 작업 로그</div><ul class="log"></ul></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="msg hide" data-m="done">
+            <span class="av ai">AI</span>
+            <div class="grow"><div class="who">AI 에이전트</div><div class="rep"><b>4모둠 편성 완료</b><span>모둠 평균 등급 A 3.0 · B 3.0 · C 3.0 · D 3.0</span><span>상위 1·2등급 6명을 모둠마다 고르게 · ‘모둠편성’ 시트에 저장</span></div><br><span class="learn">다음 PAPS 측정 후에도 <b>같은 부탁 한 줄</b>이면 다시 편성</span></div>
+          </div>
+          <div class="msg hide" data-m="thx" style="margin-bottom:8px">
+            <span class="av me">나</span>
+            <div class="grow"><div class="who">나 <span class="meta">08:44</span></div><div class="bubble">수업 전에 끝났네, 고마워! 👍</div></div>
+          </div>
+          <div class="ctrl"><button class="play">▶ 재생</button><span class="hint">감 대신 기록으로. 수업 시작 전 몇 분이면 끝.</span></div>
+        </div>
+
+        <div class="win-body demo" id="demo4" hidden>
+          <div class="msg hide" data-m="me">
+            <span class="av me">학생</span>
+            <div class="grow"><div class="who">학생 <span class="meta">3교시 체육 · 탐구 활동</span></div><div class="bubble qtext"></div><span class="att">🎬 슛_성공.mov · 슛_실패.mov</span></div>
+          </div>
+          <div class="msg hide" data-m="ai">
+            <span class="av ai">AI</span>
+            <div class="grow">
+              <div class="who">AI 에이전트 <span class="tool">도구 · iPad + AI 동작 분석</span></div>
+              <p class="say">영상에서 관절 위치를 찾아 두 슛을 비교해 볼게요. 정답 대신, 직접 확인할 질문으로 돌려드릴게요.</p>
+              <div class="work">
+                <div class="wlbl">⌁ 계획</div>
+                <div class="plan"></div>
+                <div class="work-grid">
+                  <div><div class="wlbl">▣ 화면 · 동작 분석 <span style="color:var(--faint)">(예시)</span></div><div class="screen pose" id="pose"><div class="pbadge rec" id="poseBadge">● 영상 재생 중</div><div class="floor"></div><svg viewBox="0 0 600 700" fill="none"><g class="fig" stroke="#151515" stroke-width="24" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="372" cy="62" r="36" stroke-width="9" fill="#fff"/><path d="M360 44c10 8 20 22 22 38M344 68c14-4 34-2 52 2" stroke-width="5"/>
+<path d="M300 232L292 410"/><path d="M292 410L246 508L262 622"/><path d="M292 410L338 512L330 624"/><path d="M262 622h-34M330 624h34"/>
+<path d="M300 240L372 204L352 116"/><path d="M300 240L340 228L330 140" stroke-width="18"/>
+<circle cx="300" cy="166" r="50" fill="#fff" stroke-width="12"/><path d="M282 160h.1M318 160h.1" stroke-width="12"/><path d="M286 184c8 8 20 8 28 0" stroke-width="6"/></g>
+<g class="sk"><line x1="300" y1="232" x2="292" y2="410"/><line x1="292" y1="410" x2="246" y2="508"/><line x1="246" y1="508" x2="262" y2="622"/>
+<line x1="292" y1="410" x2="338" y2="512"/><line x1="338" y1="512" x2="330" y2="624"/><line x1="300" y1="240" x2="372" y2="204"/><line x1="372" y1="204" x2="352" y2="116"/>
+<circle cx="300" cy="236" r="13"/><circle cx="292" cy="410" r="13"/><circle cx="246" cy="508" r="13"/><circle cx="338" cy="512" r="13"/>
+<circle cx="262" cy="622" r="13"/><circle cx="330" cy="624" r="13"/><circle cx="372" cy="204" r="13"/><circle cx="352" cy="116" r="13"/></g></svg>
+<div class="side"><div class="plab">팔꿈치 <b>94°</b></div><div class="plab">무릎 <b>112°</b></div><div class="plab">릴리스 높이 <b>2.31m</b></div></div>
+<div class="cmp"><div class="ch"><span></span><span>성공 슛</span><span>실패 슛</span></div><div><span>팔꿈치</span><b>94°</b><b>118°</b></div><div class="hi"><span>무릎</span><b>112°</b><b>141°</b></div><div><span>릴리스</span><b>2.31m</b><b>2.12m</b></div></div>
+</div></div>
+                  <div><div class="wlbl">≡ 작업 로그</div><ul class="log"></ul></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="msg hide" data-m="done">
+            <span class="av ai">AI</span>
+            <div class="grow"><div class="who">AI 에이전트</div><div class="rep"><b>두 슛 비교 완료</b><span>들어간 슛에서 무릎을 더 깊이 굽혔어요 (112° vs 141°).</span><span class="rq">🔎 탐구 질문 · <em>무릎을 더 굽히면 왜 공이 더 높이 떠날까?</em></span></div><br><span class="learn">정답 대신 질문으로 · <b>목표 → 실행 → 피드백 → 성찰</b>을 학생이 스스로</span></div>
+          </div>
+          <div class="msg hide" data-m="thx" style="margin-bottom:8px">
+            <span class="av me">학생</span>
+            <div class="grow"><div class="who">학생 <span class="meta">10:16</span></div><div class="bubble">다음 시간엔 무릎 각도 바꿔서 직접 실험해 볼게요!</div></div>
+          </div>
+          <div class="ctrl"><button class="play">▶ 재생</button><span class="hint">교사가 답하기 전에, 학생이 먼저 발견합니다.</span></div>
+        </div>
         <!-- placeholder for other sessions -->
         <div class="win-body" id="demoPh" hidden>
           <div class="ph"><div>
@@ -578,17 +701,17 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:60px 0 50px;fo
 const SESSIONS = [
   { key:'여는 마당', c:'var(--p0)', tag:'여는 마당 · 전체', win:'#여는마당 · NEIS 복무 상신',
     title:'교사와 학생 사이 AI — 체육교사를 위한 에이전틱 AI 활용 사례', by:'대진고등학교 유성욱',
-    topics:['AI 활용, 어디서부터 시작하면 될까?','AI를 활용한 NEIS 업무 간소화','상상하는 것들을 현실로'], demoAt:1 },
+    topics:['AI 활용, 어디서부터 시작하면 될까?','AI를 활용한 NEIS 업무 간소화','상상하는 것들을 현실로'] },
   { key:'파트 1', c:'var(--p1)', tag:'파트 1', win:'#파트1 · 준비 중',
     title:'학생상담보다 쉬운 AI 대화', by:'대구일중학교 이길봉',
     topics:['AI 대화는 어떤 것인가?','강당에서 쓰는 간단한 타이머 만들기','내가 원하는 앱 만들기 대화법 나눔 및 실습'] },
   { key:'파트 2', c:'var(--p2)', tag:'파트 2', win:'#파트2 · 준비 중',
     title:'코딩 몰라도 OK! 우리 학교 체육대회 앱 만들기', by:'동평중학교 임대관',
     topics:['체육대회 운영 적용 사례 보기 (진행용)','체육대회 운영 적용 사례 보기 (집계용)','체육대회 웹앱 응용 및 우리 학교 적용 방법 고민하기'] },
-  { key:'파트 3', c:'var(--p3)', tag:'파트 3', win:'#파트3 · 준비 중',
+  { key:'파트 3', c:'var(--p3)', tag:'파트 3', win:'#파트3 · PAPS 모둠 편성',
     title:'알.쓸.Ai — 알아두면 쓸데있는 신비한 AI 체육', by:'포산고등학교 김보경',
     topics:['PAPS 성적을 활용하여 모둠 구성하기 (실습, Claude·Google 필요)','스포츠 리듬 트레이닝 수업 (사례 공유)','AI 활용 사례와 데이터 확장성 (고민과 제언)'] },
-  { key:'파트 4', c:'var(--p4)', tag:'파트 4', win:'#파트4 · 준비 중',
+  { key:'파트 4', c:'var(--p4)', tag:'파트 4', win:'#파트4 · 동작 탐구',
     title:'스마트한 체육수업의 시작 — iPad와 AI로 실현하는 IB 탐구학습', by:'성명여자중학교 오재광',
     topics:['몸으로 경험하고, 디지털로 기록하며, AI로 탐구하는 체육수업','교사 중심에서 학생 중심으로: 스스로 발견하고 해결하는 수업','일회성 평가에서 지속적 성장으로: 목표·실행·피드백·성찰'] }
 ];
@@ -611,142 +734,247 @@ function renderInfo(i) {
     <ol>${s.topics.map((t, k) => `<li><span class="n">0${k+1}</span><span>${t}</span></li>`).join('')}</ol>`;
 }
 
+/* ---- 공통 재생 엔진 ---- */
+const SPEED = 1.5; // 클수록 느리게
+let runId = 0, playing = -1;
+const played = {};
+const sleep = (ms, id) => new Promise((res, rej) => setTimeout(() => id === runId ? res() : rej('stop'), ms * SPEED));
+function setStatus(cls, txt) { const s = $id('status'); s.className = 'status ' + cls; $id('statusTxt').textContent = txt; }
+
+const tmr = new Date(Date.now() + 864e5);
+const pad = n => String(n).padStart(2, '0');
+const D_SHORT = `${pad(tmr.getMonth()+1)}.${pad(tmr.getDate())}`;
+const D_FULL = `${tmr.getFullYear()}.${D_SHORT}`;
+document.querySelectorAll('.dTxt').forEach(e => e.textContent = D_SHORT);
+$id('repDate').textContent = `${tmr.getMonth()+1}.${tmr.getDate()}(${'일월화수목금토'[tmr.getDay()]}) 08:10~09:10`;
+
+const DEMOS = {
+  /* ---------- 여는 마당: NEIS 육아시간 상신 ---------- */
+  0: {
+    q: '내일 08:10~09:10 육아시간 나이스에 상신해 줘',
+    plan: ['로그인', '메뉴 이동', '육아시간 선택', '날짜·시간 입력', '결재선 지정', '상신'],
+    log: ['인증서 로그인', '복무 › 개인근무상황관리', '특별휴가 › 육아시간', `${D_SHORT} 08:10~09:10`, '자녀명 · 사유 입력', '결재선 협조·검토·결재', '상신'],
+    times: ['10:01', '10:01', '10:02', '10:02', '10:02', '10:03', '10:04'],
+    reset() {
+      scr('login'); act(null);
+      $id('nPw').textContent = '';
+      $id('f1').textContent = '선택'; $id('f2').textContent = '선택'; $id('f6').textContent = '선택';
+      ['f3', 'f4', 'f5', 'f7'].forEach(f => $id(f).textContent = '');
+      ['l1', 'l2', 'l3'].forEach(l => $id(l).classList.remove('in'));
+      $id('nNew').classList.add('gone'); $id('nNew').classList.remove('new');
+      $id('nAlert').classList.remove('on');
+    },
+    async run(c) {
+      c.chip(0, 'run'); c.log(0, 'run'); scr('login');
+      act($id('nCert')); await c.sleep(800);
+      act($id('nPw')); await c.type($id('nPw'), '●●●●●●●●●', 70);
+      act($id('nOk')); await c.sleep(500);
+      c.chip(0, 'done'); c.log(0, 'done');
+
+      c.chip(1, 'run'); c.log(1, 'run'); scr('list'); act($id('nMenu'));
+      await c.sleep(900); act($id('nApply')); await c.sleep(600);
+      c.chip(1, 'done'); c.log(1, 'done');
+
+      c.chip(2, 'run'); c.log(2, 'run'); scr('form');
+      act($id('f1')); await c.sleep(450); $id('f1').textContent = '특별휴가'; await c.sleep(350);
+      act($id('f2')); await c.sleep(450); $id('f2').textContent = '육아시간'; await c.sleep(350);
+      c.chip(2, 'done'); c.log(2, 'done');
+
+      c.chip(3, 'run'); c.log(3, 'run');
+      act($id('f3')); await c.type($id('f3'), D_FULL, 55);
+      act($id('f4')); await c.type($id('f4'), '08:10', 70);
+      act($id('f5')); await c.type($id('f5'), '09:10', 70);
+      c.log(3, 'done'); c.log(4, 'run');
+      act($id('f6')); await c.sleep(400); $id('f6').textContent = '○○○';
+      act($id('f7')); await c.type($id('f7'), '자녀 등원', 80);
+      act($id('nReq')); await c.sleep(600);
+      c.chip(3, 'done'); c.log(4, 'done');
+
+      c.chip(4, 'run'); c.log(5, 'run'); scr('line'); act(null);
+      for (const l of ['l1', 'l2', 'l3']) { await c.sleep(500); $id(l).classList.add('in'); }
+      await c.sleep(400);
+      c.chip(4, 'done'); c.log(5, 'done');
+
+      c.chip(5, 'run'); c.log(6, 'run'); act($id('nSub')); await c.sleep(700);
+      act(null); $id('nAlert').classList.add('on'); await c.sleep(1100);
+      $id('nAlert').classList.remove('on'); scr('list');
+      $id('nNew').classList.remove('gone'); $id('nNew').classList.add('new');
+      await c.sleep(500);
+      c.chip(5, 'done'); c.log(6, 'done');
+    }
+  },
+
+  /* ---------- 파트 3: PAPS 기록으로 모둠 편성 ---------- */
+  3: {
+    q: '2학년 3반 PAPS 결과로 실력이 고르게 4모둠 짜 줘. 한 모둠 4명씩.',
+    plan: ['명단 읽기', '종합 등급 계산', '모둠 배정', '균형 확인', '시트에 저장'],
+    log: ['명단 16명 불러옴', '체력요인 5개 → 종합 등급', '상위 1·2등급 6명 확인', 'A~D 모둠 4명씩 배정', '모둠 평균 모두 3.0', '‘모둠편성’ 시트 저장'],
+    times: ['08:41', '08:41', '08:42', '08:42', '08:43', '08:43'],
+    reset() {
+      const p = $id('paps'); p.classList.remove('teams', 'avg');
+      $id('papsToast').classList.remove('on');
+      papsLay('grid', true);
+      p.querySelectorAll('.st').forEach(e => { e.classList.remove('in', 'g', 'lo'); e.querySelector('i').textContent = '?'; });
+    },
+    async run(c) {
+      const sts = [...$id('paps').querySelectorAll('.st')];
+      c.chip(0, 'run'); c.log(0, 'run');
+      for (const e of sts) { e.classList.add('in'); await c.sleep(70); }
+      await c.sleep(300); c.chip(0, 'done'); c.log(0, 'done');
+
+      c.chip(1, 'run'); c.log(1, 'run');
+      for (const e of sts) { const g = +e.dataset.g; e.querySelector('i').textContent = g; e.classList.add('g'); if (g <= 2) e.classList.add('lo'); await c.sleep(90); }
+      c.log(1, 'done'); c.log(2, 'run'); await c.sleep(700); c.log(2, 'done');
+      c.chip(1, 'done');
+
+      c.chip(2, 'run'); c.log(3, 'run');
+      papsLay('mix'); await c.sleep(1000);
+      $id('paps').classList.add('teams'); papsLay('team'); await c.sleep(1200);
+      c.chip(2, 'done'); c.log(3, 'done');
+
+      c.chip(3, 'run'); c.log(4, 'run'); await c.sleep(500);
+      $id('paps').classList.add('avg'); await c.sleep(900);
+      c.chip(3, 'done'); c.log(4, 'done');
+
+      c.chip(4, 'run'); c.log(5, 'run'); await c.sleep(500);
+      $id('papsToast').classList.add('on'); await c.sleep(1600); $id('papsToast').classList.remove('on');
+      c.chip(4, 'done'); c.log(5, 'done');
+    }
+  },
+
+  /* ---------- 파트 4: 학생이 찍고 AI로 동작 탐구 ---------- */
+  4: {
+    q: '제 점프슛 영상이에요. 들어간 슛이랑 안 들어간 슛, 자세가 어떻게 달라요?',
+    plan: ['영상 불러오기', '관절 찾기', '각도 측정', '두 슛 비교', '탐구 질문'],
+    log: ['영상 2개 불러옴 (성공·실패)', '관절 17곳 추적', '공이 떠나는 순간 찾음', '팔꿈치·무릎 각도 측정', '두 슛 비교표 작성', '탐구 질문 1개 제시'],
+    times: ['10:12', '10:12', '10:13', '10:13', '10:14', '10:14'],
+    reset() {
+      const p = $id('pose'); p.classList.remove('frz', 'skon', 'cmpmode');
+      const b = $id('poseBadge'); b.textContent = '● 영상 재생 중'; b.classList.add('rec');
+      p.querySelectorAll('.plab, .cmp, .cmp div').forEach(e => e.classList.remove('in'));
+    },
+    async run(c) {
+      const p = $id('pose'), b = $id('poseBadge');
+      c.chip(0, 'run'); c.log(0, 'run');
+      b.textContent = '● 슛_성공.mov 재생 중'; await c.sleep(1600);
+      c.chip(0, 'done'); c.log(0, 'done');
+
+      c.chip(1, 'run'); c.log(1, 'run');
+      b.textContent = 'AI가 관절 찾는 중'; b.classList.remove('rec'); p.classList.add('skon'); await c.sleep(1200);
+      c.log(1, 'done'); c.log(2, 'run');
+      p.classList.add('frz'); b.textContent = '공이 떠나는 순간 · 정지'; await c.sleep(900);
+      c.chip(1, 'done'); c.log(2, 'done');
+
+      c.chip(2, 'run'); c.log(3, 'run');
+      for (const l of p.querySelectorAll('.plab')) { await c.sleep(550); l.classList.add('in'); }
+      await c.sleep(600); c.chip(2, 'done'); c.log(3, 'done');
+
+      c.chip(3, 'run'); c.log(4, 'run');
+      b.textContent = '슛_실패.mov 와 비교'; p.classList.add('cmpmode');
+      const cmp = p.querySelector('.cmp'); cmp.classList.add('in');
+      for (const r of cmp.querySelectorAll('div:not(.ch)')) { await c.sleep(550); r.classList.add('in'); }
+      await c.sleep(700); c.chip(3, 'done'); c.log(4, 'done');
+
+      c.chip(4, 'run'); c.log(5, 'run'); b.textContent = '탐구 질문 만드는 중'; await c.sleep(1100);
+      b.textContent = '분석 완료'; c.chip(4, 'done'); c.log(5, 'done');
+    }
+  }
+};
+
+/* NEIS 화면 도우미 */
+function scr(name) { document.querySelectorAll('#neis .scr').forEach(s => s.classList.toggle('on', s.dataset.s === name)); }
+function act(el) { document.querySelectorAll('#neis .act').forEach(e => e.classList.remove('act')); if (el) el.classList.add('act'); }
+
+/* PAPS 칩 배치 */
+function papsLay(mode, instant) {
+  const slot = [0, 0, 0, 0];
+  $id('paps').querySelectorAll('.st').forEach((e, i) => {
+    const t = +e.dataset.t; let x, y, r = 0;
+    if (mode === 'grid') { x = 1.5 + (i % 4) * 24.5; y = 14 + Math.floor(i / 4) * 20; }
+    else if (mode === 'mix') { x = 3 + ((i * 197) % 72); y = 12 + ((i * 311) % 72); r = ((i * 47) % 30) - 15; }
+    else { const k = slot[t]++; x = (t % 2) * 50 + 1 + 2 + (k % 2) * 23; y = Math.floor(t / 2) * 50 + 1.5 + 11 + Math.floor(k / 2) * 17; }
+    if (instant) e.style.transition = 'none';
+    e.style.transitionDelay = mode === 'team' ? i * 30 + 'ms' : '0ms';
+    e.style.left = x + '%'; e.style.top = y + '%'; e.style.transform = `rotate(${r}deg)`;
+    if (instant) { void e.offsetWidth; e.style.transition = ''; }
+  });
+}
+
+/* 데모 준비: 계획 칩과 로그 그리기 */
+Object.entries(DEMOS).forEach(([n, d]) => {
+  const root = $id('demo' + n); d.root = root;
+  root.querySelector('.plan').innerHTML = d.plan.map(p => `<span class="chip"><span class="ck"></span>${p}</span>`).join('');
+  root.querySelector('.log').innerHTML = d.log.map((l, k) => `<li><span class="o"></span><span>${l}</span><time>${d.times[k]}</time></li>`).join('');
+  d.chips = [...root.querySelectorAll('.plan .chip')];
+  d.logs = [...root.querySelectorAll('.log li')];
+  root.querySelector('.play').addEventListener('click', () => {
+    if (playing === +n) { stop(); resetDemo(+n); } else play(+n);
+  });
+});
+
+function resetDemo(n) {
+  const d = DEMOS[n], r = d.root;
+  r.querySelectorAll('[data-m]').forEach(m => m.classList.add('hide'));
+  r.querySelector('.qtext').textContent = '';
+  d.chips.forEach(c => c.className = 'chip'); d.logs.forEach(l => l.className = '');
+  d.reset();
+  r.querySelector('.play').textContent = '▶ 재생';
+  setStatus('', '대기');
+}
+function stop() { runId++; playing = -1; }
+
+async function play(n) {
+  const id = ++runId, d = DEMOS[n], r = d.root;
+  playing = n; played[n] = true;
+  resetDemo(n);
+  const show = m => r.querySelector(`[data-m="${m}"]`).classList.remove('hide');
+  const c = {
+    sleep: ms => sleep(ms, id),
+    type: async (el, txt, sp) => { el.textContent = ''; for (const ch of txt) { el.textContent += ch; await sleep(sp, id); } },
+    chip: (i, st) => d.chips[i].className = 'chip ' + st,
+    log: (i, st) => d.logs[i].className = st
+  };
+  r.querySelector('.play').textContent = '■ 재생 중';
+  try {
+    setStatus('run', '진행 중');
+    show('me'); await c.sleep(300);
+    const q = r.querySelector('.qtext');
+    for (const ch of d.q) { q.innerHTML = q.textContent + ch + '<span class="caret"></span>'; await c.sleep(45); }
+    q.textContent = d.q;
+    await c.sleep(500);
+    show('ai'); await c.sleep(700);
+    await d.run(c);
+    await c.sleep(500);
+    show('done'); await c.sleep(1300);
+    show('thx');
+    setStatus('done', '완료');
+    r.querySelector('.play').textContent = '↺ 다시 보기';
+    playing = -1;
+  } catch (e) { /* stopped */ }
+}
+
 function selectSession(i) {
   current = i;
   [...picker.querySelectorAll('.pick')].forEach((b, k) => b.classList.toggle('on', k === i));
   $id('winTitle').textContent = SESSIONS[i].win;
   renderInfo(i);
   stop();
-  if (i === 0) {
-    $id('demo0').hidden = false; $id('demoPh').hidden = true;
-    play();
+  document.querySelectorAll('.win .demo').forEach(e => e.hidden = e.id !== 'demo' + i);
+  if (DEMOS[i]) {
+    $id('demoPh').hidden = true;
+    play(i);
   } else {
-    $id('demo0').hidden = true; $id('demoPh').hidden = false;
+    $id('demoPh').hidden = false;
     const d = $id('phDot'); d.textContent = 'P' + i; d.style.background = SESSIONS[i].c;
     $id('phTitle').textContent = SESSIONS[i].title;
     setStatus('', '준비 중');
   }
 }
 
-/* ---- NEIS demo ---- */
-const tmr = new Date(Date.now() + 864e5);
-const pad = n => String(n).padStart(2, '0');
-const DAY = '일월화수목금토'[tmr.getDay()];
-const D_SHORT = `${pad(tmr.getMonth()+1)}.${pad(tmr.getDate())}`;
-const D_FULL = `${tmr.getFullYear()}.${D_SHORT}`;
-document.querySelectorAll('.dTxt').forEach(e => e.textContent = D_SHORT);
-$id('repDate').textContent = `${tmr.getMonth()+1}.${tmr.getDate()}(${DAY}) 08:10~09:10`;
-
-const PLAN = ['로그인', '메뉴 이동', '육아시간 선택', '날짜·시간 입력', '결재선 지정', '상신'];
-const LOG = ['인증서 로그인', '복무 › 개인근무상황관리', '특별휴가 › 육아시간', `${D_SHORT} 08:10~09:10`, '자녀명 · 사유 입력', '결재선 협조·검토·결재', '상신'];
-const LOG_T = ['10:01', '10:01', '10:02', '10:02', '10:02', '10:03', '10:04'];
-$id('plan').innerHTML = PLAN.map(p => `<span class="chip"><span class="ck"></span>${p}</span>`).join('');
-$id('log').innerHTML = LOG.map((l, k) => `<li><span class="o"></span><span>${l}</span><time>${LOG_T[k]}</time></li>`).join('');
-const chips = [...document.querySelectorAll('#plan .chip')];
-const logs = [...document.querySelectorAll('#log li')];
-const Q = '내일 08:10~09:10 육아시간 나이스에 상신해 줘';
-
-const SPEED = 1.5; // 클수록 느리게
-let runId = 0, played = false;
-const sleep = (ms, id) => new Promise((res, rej) => setTimeout(() => id === runId ? res() : rej('stop'), ms * SPEED));
-async function typeIn(el, txt, sp, id) { el.textContent = ''; for (const ch of txt) { el.textContent += ch; await sleep(sp, id); } }
-
-function setStatus(cls, txt) { const s = $id('status'); s.className = 'status ' + cls; $id('statusTxt').textContent = txt; }
-function screen(name) { document.querySelectorAll('#neis .scr').forEach(s => s.classList.toggle('on', s.dataset.s === name)); }
-function act(el) { document.querySelectorAll('#neis .act').forEach(e => e.classList.remove('act')); if (el) el.classList.add('act'); }
-const setChip = (i, st) => chips[i].className = 'chip ' + st;
-const setLog = (i, st) => logs[i].className = st;
-const show = (id, on) => $id(id).classList.toggle('hide', !on);
-
-function reset() {
-  ['mMe', 'mAi', 'mDone', 'mThx'].forEach(id => show(id, false));
-  $id('qText').textContent = '';
-  chips.forEach((c, i) => setChip(i, '')); logs.forEach((l, i) => setLog(i, ''));
-  screen('login'); act(null);
-  $id('nPw').textContent = '';
-  $id('f1').textContent = '선택'; $id('f2').textContent = '선택'; $id('f6').textContent = '선택';
-  ['f3', 'f4', 'f5', 'f7'].forEach(f => $id(f).textContent = '');
-  ['l1', 'l2', 'l3'].forEach(l => $id(l).classList.remove('in'));
-  $id('nNew').classList.add('gone'); $id('nNew').classList.remove('new');
-  $id('nAlert').classList.remove('on');
-  setStatus('', '대기');
-  $id('playBtn').textContent = '▶ 재생';
-}
-
-function stop() { runId++; }
-
-async function play() {
-  const id = ++runId; played = true;
-  reset();
-  $id('playBtn').textContent = '■ 재생 중';
-  try {
-    setStatus('run', '진행 중');
-    show('mMe', true); await sleep(300, id);
-    const q = $id('qText');
-    q.innerHTML = '<span class="caret"></span>';
-    for (const ch of Q) { q.innerHTML = q.textContent + ch + '<span class="caret"></span>'; await sleep(45, id); }
-    q.textContent = Q;
-    await sleep(500, id);
-    show('mAi', true); await sleep(700, id);
-
-    // 1 로그인
-    setChip(0, 'run'); setLog(0, 'run'); screen('login');
-    act($id('nCert')); await sleep(800, id);
-    act($id('nPw')); await typeIn($id('nPw'), '●●●●●●●●●', 70, id);
-    act($id('nOk')); await sleep(500, id);
-    setChip(0, 'done'); setLog(0, 'done');
-
-    // 2 메뉴 이동
-    setChip(1, 'run'); setLog(1, 'run'); screen('list'); act($id('nMenu'));
-    await sleep(900, id);
-    act($id('nApply')); await sleep(600, id);
-    setChip(1, 'done'); setLog(1, 'done');
-
-    // 3 육아시간 선택
-    setChip(2, 'run'); setLog(2, 'run'); screen('form');
-    act($id('f1')); await sleep(450, id); $id('f1').textContent = '특별휴가'; await sleep(350, id);
-    act($id('f2')); await sleep(450, id); $id('f2').textContent = '육아시간'; await sleep(350, id);
-    setChip(2, 'done'); setLog(2, 'done');
-
-    // 4 날짜·시간, 자녀명·사유
-    setChip(3, 'run'); setLog(3, 'run');
-    act($id('f3')); await typeIn($id('f3'), D_FULL, 55, id);
-    act($id('f4')); await typeIn($id('f4'), '08:10', 70, id);
-    act($id('f5')); await typeIn($id('f5'), '09:10', 70, id);
-    setLog(3, 'done'); setLog(4, 'run');
-    act($id('f6')); await sleep(400, id); $id('f6').textContent = '○○○';
-    act($id('f7')); await typeIn($id('f7'), '자녀 등원', 80, id);
-    act($id('nReq')); await sleep(600, id);
-    setChip(3, 'done'); setLog(4, 'done');
-
-    // 5 결재선
-    setChip(4, 'run'); setLog(5, 'run'); screen('line'); act(null);
-    for (const l of ['l1', 'l2', 'l3']) { await sleep(500, id); $id(l).classList.add('in'); }
-    await sleep(400, id);
-    setChip(4, 'done'); setLog(5, 'done');
-
-    // 6 상신
-    setChip(5, 'run'); setLog(6, 'run'); act($id('nSub')); await sleep(700, id);
-    act(null); $id('nAlert').classList.add('on'); await sleep(1100, id);
-    $id('nAlert').classList.remove('on'); screen('list');
-    $id('nNew').classList.remove('gone'); $id('nNew').classList.add('new');
-    await sleep(500, id);
-    setChip(5, 'done'); setLog(6, 'done');
-
-    await sleep(500, id);
-    show('mDone', true); await sleep(1300, id);
-    show('mThx', true);
-    setStatus('done', '완료');
-    $id('playBtn').textContent = '↺ 다시 보기';
-  } catch (e) { /* stopped */ }
-}
-
-$id('playBtn').addEventListener('click', () => {
-  if ($id('status').classList.contains('run')) { stop(); reset(); } else play();
-});
-renderInfo(0); reset();
+renderInfo(0);
+Object.keys(DEMOS).forEach(n => resetDemo(+n));
 new IntersectionObserver((ents, ob) => {
-  ents.forEach(e => { if (e.isIntersecting && !played && current === 0) { play(); ob.disconnect(); } });
+  ents.forEach(e => { if (e.isIntersecting && !played[current] && DEMOS[current]) { play(current); ob.disconnect(); } });
 }, { rootMargin: '0px 0px -40% 0px' }).observe(document.querySelector('.win'));
 
 /* ================= 신청서 ================= */
