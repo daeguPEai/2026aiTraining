@@ -48,8 +48,21 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 @media(max-width:640px){.top nav{display:none}.mat{margin-left:auto}.mat-btn{padding:7px 11px;font-size:13px}.top .cta-s{padding:8px 13px;font-size:13px}.brand{font-size:13px;white-space:nowrap;min-width:0;overflow:hidden;text-overflow:ellipsis}.top .wrap{gap:8px}}
 
 /* hero */
-.hero{padding:72px 0 56px;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:end}
-@media(max-width:860px){.hero{grid-template-columns:1fr;padding:44px 0 36px;gap:28px}}
+.hero{padding:56px 0 34px;display:grid;grid-template-columns:1fr 330px;grid-template-areas:"top vid" "cta vid";column-gap:56px;align-items:end}
+.h-top{grid-area:top;align-self:end}.h-vid{grid-area:vid}.h-cta{grid-area:cta;align-self:start}
+.trailer{position:relative;width:100%;aspect-ratio:406/720;border:9px solid var(--ink);border-radius:40px;overflow:hidden;background:#fff;box-shadow:0 30px 50px -30px rgba(0,0,0,.35)}
+.trailer video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.tr-sound{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);background:var(--ink);color:#fff;border-radius:99px;padding:9px 16px;font-weight:700;font-size:13.5px;white-space:nowrap;box-shadow:0 8px 20px -8px rgba(0,0,0,.5)}
+.tr-sound span{margin-right:2px}
+.tr-mute{position:absolute;right:12px;bottom:12px;width:38px;height:38px;border-radius:50%;background:rgba(21,21,21,.75);color:#fff;font-size:16px}
+.tr-cap{text-align:center;font-size:12px;color:var(--mute);margin-top:10px}
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr;grid-template-areas:"top" "vid" "cta";padding:40px 0 28px;row-gap:26px}
+  .h-vid{width:min(232px,62vw);justify-self:center}
+  .trailer{border-width:7px;border-radius:30px}
+  .tr-sound{font-size:12.5px;padding:8px 13px;bottom:12px}
+  .h-cta{margin-top:0;justify-content:center}
+}
 .pill-note{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line2);background:var(--card);border-radius:99px;padding:6px 14px;font-size:13px;font-weight:600}
 .pill-note .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
 .pill-note .sep{width:1px;height:12px;background:var(--line2)}
@@ -59,13 +72,16 @@ h1 .hl{display:inline-block;background:var(--ink);color:#fff;border-radius:.4em;
 h1 .hl::before{content:"";display:inline-block;width:.24em;height:.24em;border-radius:50%;background:var(--accent);vertical-align:.2em;margin-right:.18em}
 h1 .g{color:var(--ink)}
 .lead{font-size:17px;color:var(--ink2);max-width:34em}
-.facts{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:8px 22px}
-.facts div{display:grid;grid-template-columns:64px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
-.facts div:last-child{border-bottom:0}
+.facts{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:6px 8px;display:grid;grid-template-columns:repeat(4,1fr)}
+.facts div{display:block;padding:14px 16px;border-right:1px solid var(--line);font-size:15px}
+.facts div:last-child{border-right:0}
+.facts dt{display:block;margin-bottom:4px}
+@media(max-width:760px){.facts{grid-template-columns:1fr 1fr}.facts div:nth-child(2){border-right:0}.facts div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
 .facts dt{font-family:var(--mono);font-size:12px;color:var(--mute);padding-top:3px}
 .facts dd b{font-weight:700}
 .facts dd small{display:block;color:var(--mute);font-size:13.5px}
 .cta{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap}
+.h-cta.cta{margin-top:26px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:99px;font-weight:700;font-size:16px;padding:14px 24px;text-decoration:none;cursor:pointer;border:0;font-family:inherit}
 .btn-k{background:var(--ink);color:#fff}.btn-k:hover{background:#000}
 .btn-o{background:var(--card);color:var(--ink);border:1px solid var(--line2)}
@@ -511,22 +527,30 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:60px 0 50px;fo
 
 <div class="wrap">
   <section class="hero">
-    <div>
+    <div class="h-top">
       <span class="pill-note"><span class="dot"></span>신청 받는 중<span class="sep"></span><span class="mono">2026.11.27 FRI 15:00</span></span>
       <h1>체육교사를 위한<br><span class="hl">AI 활용</span> <span class="g">사례 연수</span></h1>
       <p class="lead">체육수업과 학교 업무에 AI를 써 본 실제 사례를 나누고, 직접 만들어 보는 실습으로 내 수업에 바로 쓸 결과물을 가져갑니다.</p>
-      <div class="cta">
-        <a class="btn btn-k" href="#apply">참가 신청 →</a>
-        <a class="btn btn-o" href="#program">무엇을 배우나요?</a>
-      </div>
     </div>
-    <dl class="facts">
-      <div><dt>일시</dt><dd><b>11. 27.(금) 15:00~18:00</b><small>3시간</small></dd></div>
-      <div><dt>장소</dt><dd><b>대구일중학교</b><small>도서관 및 교실</small></dd></div>
-      <div><dt>대상</dt><dd><b>대구지역 체육교사</b><small>희망자 누구나</small></dd></div>
-      <div><dt>방식</dt><dd><b>스테이션 순환형</b><small>신청 규모에 따라 전체 순차형으로 변경 가능</small></dd></div>
-    </dl>
+    <div class="h-vid">
+      <div class="trailer" id="trailer">
+        <video id="trv" src="trailer.mp4" poster="trailer.jpg" muted loop playsinline preload="metadata" aria-label="연수 예고편 영상"></video>
+        <button class="tr-sound" id="trSound" type="button"><span>🔊</span> 소리 켜고 처음부터</button>
+        <button class="tr-mute" id="trMute" type="button" aria-label="소리 끄기" hidden>🔇</button>
+      </div>
+      <div class="tr-cap mono">예고편 · 1분</div>
+    </div>
+    <div class="h-cta cta">
+      <a class="btn btn-k" href="#apply">참가 신청 →</a>
+      <a class="btn btn-o" href="#program">무엇을 배우나요?</a>
+    </div>
   </section>
+  <dl class="facts">
+    <div><dt>일시</dt><dd><b>11. 27.(금) 15:00~18:00</b><small>3시간</small></dd></div>
+    <div><dt>장소</dt><dd><b>대구일중학교</b><small>도서관 및 교실</small></dd></div>
+    <div><dt>대상</dt><dd><b>대구지역 체육교사</b><small>희망자 누구나</small></dd></div>
+    <div><dt>방식</dt><dd><b>스테이션 순환형</b><small>규모에 따라 순차형 변경 가능</small></dd></div>
+  </dl>
 
   <!-- ===== 01 program ===== -->
   <section class="blk" id="program">
@@ -1451,6 +1475,17 @@ Object.keys(DEMOS).forEach(n => resetDemo(+n));
 new IntersectionObserver((ents, ob) => {
   ents.forEach(e => { if (e.isIntersecting && !played[current] && DEMOS[current]) { play(current); ob.disconnect(); } });
 }, { rootMargin: '0px 0px -40% 0px' }).observe(document.querySelector('.win'));
+
+/* ================= 예고편 ================= */
+(() => {
+  const v = document.getElementById('trv'), on = document.getElementById('trSound'), mute = document.getElementById('trMute');
+  if (!v) return;
+  const tryPlay = () => v.play().catch(() => {});
+  new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? tryPlay() : v.pause()), { threshold: .25 }).observe(v);
+  on.addEventListener('click', () => { v.muted = false; v.currentTime = 0; tryPlay(); on.hidden = true; mute.hidden = false; });
+  mute.addEventListener('click', () => { v.muted = true; mute.hidden = true; on.hidden = false; });
+  v.addEventListener('click', () => { if (v.muted) on.click(); else v.paused ? tryPlay() : v.pause(); });
+})();
 
 /* ================= 수업자료 메뉴 ================= */
 (() => {
