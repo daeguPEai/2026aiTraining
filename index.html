@@ -33,7 +33,19 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .top nav{margin-left:auto;display:flex;gap:22px;font-size:14px;color:var(--ink2)}
 .top nav a{color:inherit;text-decoration:none}
 .top .cta-s{background:var(--ink);color:#fff;border-radius:99px;padding:8px 16px;font-weight:700;font-size:14px;text-decoration:none}
-@media(max-width:640px){.top nav{display:none}.top .cta-s{margin-left:auto}}
+.mat{position:relative;margin-left:6px}
+.mat-btn{font-weight:700;font-size:14px;border:1px solid var(--line2);background:var(--card);border-radius:99px;padding:7px 14px;display:inline-flex;gap:5px;align-items:center}
+.mat-btn span{font-size:10px;transition:transform .2s}
+.mat.open .mat-btn span{transform:rotate(180deg)}
+.mat-pop{position:absolute;right:0;top:calc(100% + 8px);width:270px;background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:6px;box-shadow:0 20px 40px -20px rgba(0,0,0,.3);display:none}
+.mat.open .mat-pop{display:grid}
+.mat-pop a{display:grid;grid-template-columns:10px 1fr auto;gap:10px;align-items:center;padding:10px 12px;border-radius:11px;text-decoration:none;color:var(--ink)}
+.mat-pop a:hover{background:var(--soft)}
+.mat-pop i{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.mat-pop b{display:block;font-size:14px}
+.mat-pop small{display:block;font-size:12.5px;color:var(--mute)}
+.mat-pop em{font-style:normal;color:var(--mute)}
+@media(max-width:640px){.top nav{display:none}.mat{margin-left:auto}.mat-btn{padding:7px 11px;font-size:13px}.top .cta-s{padding:8px 13px;font-size:13px}.brand{font-size:13px;white-space:nowrap;min-width:0;overflow:hidden;text-overflow:ellipsis}.top .wrap{gap:8px}}
 
 /* hero */
 .hero{padding:72px 0 56px;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:end}
@@ -484,6 +496,14 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:60px 0 50px;fo
   <div class="wrap">
     <div class="brand"><i></i>AI 체육수업 실천 연구회</div>
     <nav><a href="#program">연수 내용</a><a href="#schedule">일정</a><a href="#prep">준비물</a></nav>
+    <div class="mat" id="mat">
+      <button class="mat-btn" id="matBtn" aria-expanded="false" aria-haspopup="true">수업자료 <span>▾</span></button>
+      <div class="mat-pop" role="menu">
+        <a role="menuitem" href="https://claude.ai/artifact/93ziafdnsFRtkZ39J5cdYn" target="_blank" rel="noopener"><i style="--c:var(--p2)"></i><span><b>파트 2 · 임대관</b><small>체육대회 앱 만들기</small></span><em>↗</em></a>
+        <a role="menuitem" href="https://claude.ai/artifact/XS7CKmtSbwvyUhVzu429dQ" target="_blank" rel="noopener"><i style="--c:var(--p3)"></i><span><b>파트 3 · 김보경</b><small>알.쓸.Ai — PAPS 모둠 구성</small></span><em>↗</em></a>
+        <a role="menuitem" href="https://claude.ai/artifact/YQrtkJ3s7jdHAwbFYUp52s" target="_blank" rel="noopener"><i style="--c:var(--p4)"></i><span><b>파트 4 · 오재광</b><small>iPad와 AI로 IB 탐구학습</small></span><em>↗</em></a>
+      </div>
+    </div>
     <a class="cta-s" href="#apply">신청하기</a>
   </div>
 </header>
@@ -1430,6 +1450,14 @@ Object.keys(DEMOS).forEach(n => resetDemo(+n));
 new IntersectionObserver((ents, ob) => {
   ents.forEach(e => { if (e.isIntersecting && !played[current] && DEMOS[current]) { play(current); ob.disconnect(); } });
 }, { rootMargin: '0px 0px -40% 0px' }).observe(document.querySelector('.win'));
+
+/* ================= 수업자료 메뉴 ================= */
+(() => {
+  const m = document.getElementById('mat'), b = document.getElementById('matBtn');
+  b.addEventListener('click', e => { e.stopPropagation(); const o = m.classList.toggle('open'); b.setAttribute('aria-expanded', o); });
+  document.addEventListener('click', e => { if (!m.contains(e.target)) { m.classList.remove('open'); b.setAttribute('aria-expanded', false); } });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') m.classList.remove('open'); });
+})();
 
 /* ================= 신청서 ================= */
 const ENDPOINT = 'https://script.google.com/macros/s/AKfycbxwdHdBozA3c3mXteVwLZ79Clw1XpN-gIJuVTM93kDy2N6CzoJqQiH_f0-2iol1RFvj/exec';
