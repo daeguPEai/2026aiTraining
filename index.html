@@ -34,6 +34,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .top nav a{color:inherit;text-decoration:none}
 .top .cta-s{background:var(--ink);color:#fff;border-radius:99px;padding:8px 16px;font-weight:700;font-size:14px;text-decoration:none}
 .mat{position:relative;margin-left:6px}
+.mat[hidden]{display:none}
 .mat-btn{font-weight:700;font-size:14px;border:1px solid var(--line2);background:var(--card);border-radius:99px;padding:7px 14px;display:inline-flex;gap:5px;align-items:center}
 .mat-btn span{font-size:10px;transition:transform .2s}
 .mat.open .mat-btn span{transform:rotate(180deg)}
@@ -45,7 +46,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .mat-pop b{display:block;font-size:14px}
 .mat-pop small{display:block;font-size:12.5px;color:var(--mute)}
 .mat-pop em{font-style:normal;color:var(--mute)}
-@media(max-width:640px){.top nav{display:none}.mat{margin-left:auto}.mat-btn{padding:7px 11px;font-size:13px}.top .cta-s{padding:8px 13px;font-size:13px}.brand{font-size:13px;white-space:nowrap;min-width:0;overflow:hidden;text-overflow:ellipsis}.top .wrap{gap:8px}}
+@media(max-width:640px){.top nav{display:none}.mat{margin-left:auto}.mat-btn{padding:7px 11px;font-size:13px}.top .cta-s{padding:8px 13px;font-size:13px}.brand{font-size:13px;white-space:nowrap;min-width:0;overflow:hidden;text-overflow:ellipsis}.top .wrap{gap:8px}.mat[hidden]+.cta-s{margin-left:auto}}
 
 /* hero */
 .hero{padding:56px 0 34px;display:grid;grid-template-columns:1fr 330px;grid-template-areas:"top vid" "cta vid";column-gap:56px;align-items:end}
@@ -512,7 +513,8 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:60px 0 50px;fo
   <div class="wrap">
     <div class="brand"><i></i>AI 체육수업 실천 연구회</div>
     <nav><a href="#program">연수 내용</a><a href="#schedule">일정</a><a href="#prep">준비물</a></nav>
-    <div class="mat" id="mat">
+    <!-- 수업자료 메뉴: 연수 후 공개할 때 아래 hidden 을 지우면 다시 보입니다 -->
+    <div class="mat" id="mat" hidden>
       <button class="mat-btn" id="matBtn" aria-expanded="false" aria-haspopup="true">수업자료 <span>▾</span></button>
       <div class="mat-pop" role="menu">
         <a role="menuitem" href="https://bbonng.github.io/2026AI/board/" target="_blank" rel="noopener"><i style="--c:var(--p1)"></i><span><b>파트 1 · 이길봉</b><small>학생상담보다 쉬운 AI 대화</small></span><em>↗</em></a>
