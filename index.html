@@ -463,6 +463,12 @@ h2 .g{color:#5f5f58}
 .prep b{display:block;font-size:18px;letter-spacing:-.02em;margin:6px 0 4px}
 .prep p{color:var(--ink2);font-size:14.5px}
 
+/* closed */
+.closed{margin-top:30px;padding:40px 28px;text-align:center}
+.closed .tag-x{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:600;color:var(--mute);border:1px solid var(--line2);border-radius:99px;padding:3px 12px}
+.closed h3{font-size:26px;letter-spacing:-.03em;margin:14px 0 8px}
+.closed p{color:var(--ink2);font-size:16px}
+.form[hidden]{display:none}
 /* form */
 #apply{scroll-margin-top:70px}
 .form{padding:28px 24px;margin-top:30px}
@@ -524,14 +530,14 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:60px 0 50px;fo
         <a role="menuitem" href="https://claude.ai/artifact/YQrtkJ3s7jdHAwbFYUp52s" target="_blank" rel="noopener"><i style="--c:var(--p4)"></i><span><b>파트 4 · 오재광</b><small>iPad와 AI로 IB 탐구학습</small></span><em>↗</em></a>
       </div>
     </div>
-    <a class="cta-s" href="#apply">신청하기</a>
+    <!-- 신청 마감: <a class="cta-s" href="#apply">신청하기</a> -->
   </div>
 </header>
 
 <div class="wrap">
   <section class="hero">
     <div class="h-top">
-      <span class="pill-note"><span class="dot"></span>신청 받는 중<span class="sep"></span><span class="mono">2026.11.27 FRI 15:00</span></span>
+      <span class="pill-note"><span class="dot" style="background:var(--faint)"></span>신청 마감<span class="sep"></span><span class="mono">2026.11.27 FRI 15:00</span></span>
       <h1>체육교사를 위한<br><span class="hl">AI 활용</span> <span class="g">사례 연수</span></h1>
       <p class="lead">체육수업과 학교 업무에 AI를 써 본 실제 사례를 나누고, 직접 만들어 보는 실습으로 내 수업에 바로 쓸 결과물을 가져갑니다.</p>
     </div>
@@ -544,8 +550,7 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:60px 0 50px;fo
       <div class="tr-cap mono">예고편 · 1분</div>
     </div>
     <div class="h-cta cta">
-      <a class="btn btn-k" href="#apply">참가 신청 →</a>
-      <a class="btn btn-o" href="#program">무엇을 배우나요?</a>
+      <a class="btn btn-k" href="#program">무엇을 배우나요? ↓</a>
     </div>
   </section>
   <dl class="facts">
@@ -914,7 +919,12 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:60px 0 50px;fo
   <section class="blk narrow" id="apply">
     <div class="eyebrow">04 · 참가 신청</div>
     <h2>참가 신청</h2>
-    <div class="card form" id="formCard">
+    <div class="card closed">
+      <span class="tag-x">신청 마감</span>
+      <h3>신청이 마감되었습니다.</h3>
+      <p>문의사항은 <b>대진고 유성욱 선생님</b>께 교육청 메신저로 연락 부탁드립니다.</p>
+    </div>
+    <div class="card form" id="formCard" hidden>
       <form id="f" novalidate>
         <div class="q" data-req="text">
           <label for="name">성명<span class="req">*</span></label>
